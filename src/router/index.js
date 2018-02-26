@@ -14,7 +14,7 @@ import Hello from '../components/Hello'
 Vue.use(Router)
 
 const routes = [
-    { path: '/', name: 'Hello', component: Hello }, 
+    { path: '/', name: 'Hello', component: Hello }
     // { path: '/div2img', name: 'Div2Img', component: Div2Img},
     // { path: '/OnePaper', name: 'neo', component: neo, },
     // { path: '/OnePaper/cityInfo', name: 'city', component: City}, 
@@ -24,9 +24,7 @@ const routes = [
     // { path: '/OnePaper/beginWithDogs', name: 'dogs', component: OnePaperBeginWithDogs }  
 ]
 
-const router = new Router({
+export default new Router({
   mode: 'history',
   routes
 })
-
-export default router
