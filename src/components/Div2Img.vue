@@ -33,7 +33,7 @@
 </template>
 
 <script>
-  import * as color from '../assets/js/color.js'
+  import * as color from '/static/js/color'
   export default {
     name: 'Div2Img',
     data() {

@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Hello from '@/components/Hello'
-import Div2Img from '@/components/Div2Img'
+// import Div2Img from '@/components/Div2Img'
 
 import neo from '@/components/OnePaper/neo'
 import City from '@/components/OnePaper/20171012-city'
@@ -14,7 +14,7 @@ Vue.use(Router)
 
 const routes = [
     { path: '/', name: 'Hello', component: Hello }, 
-    { path: '/div2img', name: 'Div2Img', component: Div2Img},
+    // { path: '/div2img', name: 'Div2Img', component: Div2Img},
     { path: '/OnePaper', name: 'neo', component: neo, },
     { path: '/OnePaper/cityInfo', name: 'city', component: City}, 
     { path: '/OnePaper/shareCard', name: 'shareCard', component: OnePaperShareCard}, 
