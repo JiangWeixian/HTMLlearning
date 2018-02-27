@@ -63,7 +63,7 @@
     width: 100%;
     height: 100vh;
     overflow: hidden;
-    background: url('/static/img/20171012.jpg');
+    background: url("../../assets/img/20171012.jpg");
     background-size: cover;
     position: relative;
   }

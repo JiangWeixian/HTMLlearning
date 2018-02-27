@@ -38,7 +38,7 @@
                     'loginBall': {
                         id: 'loginBall',
                         time: '2017-10-28',
-                        src: '/static/img/onePaper/loginBall.png',
+                        src: require('../../assets/img/onePaper/loginBall.png'),
                         alt: 'login',
                         color: 'rgba(138, 0, 245, 0.9)',
                         title: '<login-ball>',
@@ -48,7 +48,7 @@
                     'weather': {
                         id: 'weather',
                         time: '2017-10-30',
-                        src: '/static/img/onePaper/weather.png',
+                        src: require('../../assets/img/onePaper/weather.png'),
                         alt: 'weather',
                         color: 'rgba(67, 55, 26, 0.9)',
                         title: '<weather-card>',
@@ -58,7 +58,7 @@
                     'cityInfo': {
                         id: 'cityInfo',
                         time: '2017-10-12',
-                        src: '/static/img/onePaper/cityInfo.png',
+                        src: require('../../assets/img/onePaper/cityInfo.png'),
                         alt: 'shanghai',
                         color: 'rgba(30, 0, 104, 0.9)',
                         title: '<city-info>',
@@ -68,7 +68,7 @@
                     'shareCard': {
                         id: 'shareCard',
                         time: '2017-10-28',
-                        src: '/static/img/onePaper/shareCard.png',
+                        src: require('../../assets/img/onePaper/shareCard.png'),
                         alt: 'shareCard',
                         color: 'rgba(60, 136, 239, 0.9)',
                         title: '<share-card>',
@@ -78,7 +78,7 @@
                     'beginWithDogs': {
                         id: 'beginWithDogs',
                         time: '2018-02-16',
-                        src: '/static/img/onePaper/beginWithDogs.png',
+                        src: require('../../assets/img/onePaper/beginWithDogs.png'),
                         alt: '2018',
                         color: 'rgba(255, 0, 0, 0.9)',
                         title: '<begin-with-dogs>',

@@ -30,7 +30,7 @@
         width: 100%;
         height: 100vh;
         overflow: hidden;
-        background: url("/static/img/juuso-salminen-543409.jpg");
+        background: url("../../assets/img/juuso-salminen-543409.jpg");
         background-size: cover;
         background-position-y: center;
         background-position-x: 5rem;

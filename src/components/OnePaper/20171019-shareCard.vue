@@ -4,32 +4,32 @@
       <div class="shareCard-slider">
         <ul id="SHARELIST" class="shareCard-list">
           <li class="list-info">
-            <img src="/static/img/avatar.jpg" alt="avatar">
+            <img src="../../assets/img/avatar.jpg" alt="avatar">
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid commodi dolores id in mollitia officiis, quae quisquam voluptatum. At dolor facere iusto laudantium quisquam reprehenderit sequi? Accusamus ad commodi laudantium!</p>
             <button>SHARE IT!</button>
           </li>
           <li class="list-info">
-            <img src="/static/img/avatar.jpg" alt="avatar">
+            <img src="../../assets/img/avatar.jpg" alt="avatar">
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet asperiores at eligendi esse fugit illum, inventore libero magni nam nesciunt officia officiis, quod repudiandae sint tenetur ut vero voluptatibus?</p>
             <button>SHARE IT!</button>
           </li>
           <li class="list-info">
-            <img src="/static/img/avatar.jpg" alt="avatar">
+            <img src="../../assets/img/avatar.jpg" alt="avatar">
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda commodi consequatur hic magnam non, quidem quis quisquam quos repudiandae sit tempore totam voluptate. Autem consectetur, dolor eveniet impedit natus quo!</p>
             <button>SHARE IT!</button>
           </li>
           <li class="list-info">
-            <img src="/static/img/avatar.jpg" alt="avatar">
+            <img src="../../assets/img/avatar.jpg" alt="avatar">
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae distinctio expedita nulla obcaecati ullam. Aspernatur consectetur eum explicabo maiores molestias quasi quod repellendus. Doloribus explicabo magnam magni neque nulla, recusandae.</p>
             <button>SHARE IT!</button>
           </li>
           <li class="list-info">
-            <img src="/static/img/avatar.jpg" alt="avatar">
+            <img src="../../assets/img/avatar.jpg" alt="avatar">
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aut culpa dignissimos doloremque ea et impedit itaque libero minima natus numquam pariatur quae, quisquam sapiente, sequi tempora ullam veritatis voluptate!</p>
             <button>SHARE IT!</button>
           </li>
           <li class="list-info">
-            <img src="/static/img/avatar.jpg" alt="avatar">
+            <img src="../../assets/img/avatar.jpg" alt="avatar">
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur assumenda consequuntur dolorum ea esse explicabo facere fugiat itaque necessitatibus nemo odit qui quidem, quis ullam unde! Aliquid debitis temporibus voluptatem!</p>
             <button>SHARE IT!</button>
           </li>
