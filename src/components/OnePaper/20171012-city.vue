@@ -89,7 +89,7 @@
     content: '';
     width: 60rem;
     height: 30rem;
-    background-image: url('/static/img/20171012.jpg');
+    background-image: url('../../assets/img/20171012.jpg');
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
