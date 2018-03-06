@@ -82,13 +82,13 @@ export default {
                     content: '单页Vue页面，UI/动画/组件设计。属于练手项目'
                 },
                 'p_2': {
-                    src: 'https://raw.githubusercontent.com/JiangWeixian/HTMLlearning/master/README/projects-components.jpg',
+                    src: 'https://raw.githubusercontent.com/JiangWeixian/HTMLlearning/master/README/projects/projects-components.jpg',
                     title: 'COMPONENTS',
-                    time: '2018-10-1',
+                    time: '2018-03-05',
                     content: '单页Vue页面，UI/动画/组件设计。属于练手项目'
                 },
                 'p_3': {
-                    src: 'https://raw.githubusercontent.com/JiangWeixian/HTMLlearning/master/README/projects-uirules.jpg',
+                    src: 'https://raw.githubusercontent.com/JiangWeixian/HTMLlearning/master/README/projects/projects-uirules.jpg',
                     title: 'UI',
                     time: '2018-10-1',
                     content: '单页Vue页面，UI/动画/组件设计。属于练手项目'
