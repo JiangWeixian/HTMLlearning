@@ -30,9 +30,6 @@ a{
 .hide{
     display: none;
 }
-ul{
-    list-style: none;
-}
 input {
   background: none;
   outline: none;

@@ -49,7 +49,7 @@
                       <li class="paper card" v-for="item in items">
                           <div class="card-img" @click="link(item.router)">
                               <img :src="item.src" :alt="item.id">
-                              <div class="card-intro">
+                              <div class="card-intro" :style="item.style">
                                   <p class="card-title">{{ item.title }}</p>
                                   <p class="card-time">{{ item.time }}</p>
                               </div>
@@ -66,70 +66,34 @@
 </template>
 
 <script>
-export default {
-    name: 'hello', 
-    data () {
-        return {
-            msg: 'Welcome to Your Vue.js App',
-            selectedItem: 'articles',
-            projectsLists: ['onepaper', 'plugins', 'ui'],
-            articlesLists: ['a_1'],
-            projectsThreads: {
-                'onepaper': {
-                    id: 'onepaper',
-                    router: '/onepaper',
-                    src: 'https://raw.githubusercontent.com/JiangWeixian/HTMLlearning/master/README/projects/projects-onepaper.jpg',
-                    title: 'ONEPAPER',
-                    time: '2018-10-1',
-                    content: '单页Vue页面，UI/动画/组件设计。属于练手项目'
-                },
-                'plugins': {
-                    id: 'plugins',
-                    router: '/',
-                    src: 'https://raw.githubusercontent.com/JiangWeixian/HTMLlearning/master/README/projects/projects-components.jpg',
-                    title: 'PLUGINS',
-                    time: '2018-03-05',
-                    content: '单页Vue页面，UI/动画/组件设计。属于练手项目'
-                },
-                'ui': {
-                    id: 'ui',
-                    router: '/',
-                    src: 'https://raw.githubusercontent.com/JiangWeixian/HTMLlearning/master/README/projects/projects-uirules.jpg',
-                    title: 'UI',
-                    time: '2018-10-1',
-                    content: '单页Vue页面，UI/动画/组件设计。属于练手项目'
-                }
-            },
-            articlesThreads: {
-                'a_1': {
-                    id: 'a_1',
-                    router: '/articles/a_1',
-                    src: require('.././assets/img/avatar.jpg'),
-                    title: 'ONEPAPER',
-                    time: '2018-10-1',
-                    content: '单页Vue页面，UI/动画/组件设计。属于练手项目'
-                },
+    import { mapGetters } from 'vuex'
+    export default {
+        name: 'hello', 
+        data () {
+            return {
+                msg: 'Welcome to Your Vue.js App', 
+                selectedItem: 'articles'
+            }
+            }, 
+        computed: {
+            ...mapGetters({
+               articleLists: 'get_articlelists',
+               projectLists: 'get_projectlists' 
+            }),
+            items() {
+                let renderContent = this.selectedItem == 'projects'? this.projectLists: this.articleLists;
+                return renderContent
+            }
+            }, 
+        methods: {
+            select(type) {
+                this.selectedItem = type
+            }, 
+            link(url) {
+                this.$router.push({ path: url })
             }
         }
-    },
-    computed: {
-        items() {
-            let renderList = this.selectedItem == 'projects'? this.projectsLists: this.articlesLists
-                ,renderContent = this.selectedItem == 'projects'? this.projectsThreads: this.articlesThreads;
-            return renderList.map((id) => {
-                return renderContent[id]
-            })
-        }
-    },
-    methods: {
-        select(type) {
-            this.selectedItem = type
-        },
-        link(url) {
-            this.$router.push({ path: url })
-        }
     }
-}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -137,6 +101,9 @@ export default {
     .home {
         background-color: #f5f5f5;
         min-height: 100vw;
+    }
+    ul {
+        list-style: none;
     }
     .lh-36 {
         line-height: 36px;

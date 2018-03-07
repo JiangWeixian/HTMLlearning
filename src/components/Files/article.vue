@@ -19,11 +19,8 @@
             id: String
         },
         computed: {
-            ...mapGetters({
-               articleLists: 'articleLists' 
-            }),
             content() {
-                return this.$store.getters.currentArticle('a_2')
+                return this.$store.getters.currentArticle(this.id)
             },
             markedContent() {
                 return marked(this.content.markdownData)

@@ -13,13 +13,51 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var state = {
     blog: 'jiangweixian',
     searchContent: '',
-    articleLists: [],
+    projectLists: ['onepaper', 'plugins', 'ui'],
+    projectThreads: {
+        'onepaper': {
+            id: 'onepaper',
+            router: '/onepaper',
+            src: 'https://raw.githubusercontent.com/JiangWeixian/HTMLlearning/master/README/projects/projects-onepaper.jpg',
+            alt: 'onepaper',
+            color: 'white',
+            title: 'ONEPAPER',
+            time: '2018-10-1',
+            content: '单页Vue页面，UI/动画/组件设计。属于练手项目'
+        },
+        'plugins': {
+            id: 'plugins',
+            router: '/',
+            src: 'https://raw.githubusercontent.com/JiangWeixian/HTMLlearning/master/README/projects/projects-components.jpg',
+            alt: 'plugins',
+            color: 'white',
+            title: 'PLUGINS',
+            time: '2018-03-05',
+            content: '具有实际功能的可用插件'
+        },
+        'ui': {
+            id: 'ui',
+            router: '/',
+            alt: 'ui',
+            color: 'white',
+            src: 'https://raw.githubusercontent.com/JiangWeixian/HTMLlearning/master/README/projects/projects-uirules.jpg',
+            title: 'UI',
+            time: '2018-10-1',
+            content: 'Blog UI 设计规范'
+        }
+    },
+    articleLists: ['build_website_1'],
     articleThreads: {
-        'a_2': {
-            id: 'a_2',
-            articleTitle: '如何在线装换Markdown文件',
-            timestamp: '2018-03-05',
-            markdownData: "# [Vuelog](https://vuelog.js.org/)\n" + "\n" + "[![ES2015+](https://img.shields.io/badge/es-2015+-ff69b4.svg)](https://kangax.github.io/compat-table/es6/)\n" + "[![CircleCI](https://img.shields.io/circleci/project/myst729/Vuelog/master.svg)](https://circleci.com/gh/myst729/Vuelog/tree/master)\n" + "[![Codecov](https://img.shields.io/codecov/c/github/myst729/Vuelog/master.svg)](https://codecov.io/github/myst729/Vuelog)\n" + "[![Release](https://img.shields.io/github/release/myst729/Vuelog.svg)](https://github.com/myst729/Vuelog/releases/latest)\n" + "[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/myst729/Vuelog/blob/master/LICENSE)\n" + "\n" + "> A backend-free blog system built on top of Vue.js\n" + "\n" + "\n" + "## Browsers Support\n" + "\n" + "| <img src=\"https://myst729.github.io/blog-images/browsers/chrome/chrome_256x256.png\" alt=\"Chrome\" width=\"96\" height=\"96\"><br>Chrome | <img src=\"https://myst729.github.io/blog-images/browsers/edge/edge_256x256.png\" alt=\"Edge\" width=\"96\" height=\"96\"><br>Edge | <img src=\"https://myst729.github.io/blog-images/browsers/firefox/firefox_256x256.png\" alt=\"Firefox\" width=\"96\" height=\"96\"><br>Firefox | <img src=\"https://myst729.github.io/blog-images/browsers/opera/opera_256x256.png\" alt=\"Opera\" width=\"96\" height=\"96\"><br>Opera | <img src=\"https://myst729.github.io/blog-images/browsers/safari/safari_256x256.png\" alt=\"Safari\" width=\"96\" height=\"96\"><br>Safari | <img src=\"https://myst729.github.io/blog-images/browsers/internet-explorer/internet-explorer_256x256.png\" alt=\"Internet Explorer\" width=\"96\" height=\"96\"><br>Internet Explorer |\n" + "| :------: | :------: | :------: | :------: | :------: | :--: |\n" + "| Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ | 11 ✘ |\n" + "\n" + "\n" + "## Build Setup\n" + "\n" + "```bash\n" + "# install dependencies\n" + "npm install\n" + "\n" + "# serve with hot reload at localhost:8080\n" + "npm run dev\n" + "\n" + "# build for production with minification, and update documentation as well\n" + "npm run build\n" + "\n" + "# build for production, and view the bundle analyzer report\n" + "npm run report\n" + "\n" + "# build for production, but dependencies are loaded from jsDelivr CDN\n" + "npm run lite\n" + "\n" + "# run unit tests\n" + "npm run unit\n" + "\n" + "# run e2e tests\n" + "npm run e2e\n" + "\n" + "# run all tests\n" + "npm run test\n" + "```\n" + "\n" + "For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).\n" + "\n" + "If you just want to write something, grab the latest release package [here](https://github.com/myst729/Vuelog/releases/latest).\n" + "\n" + "\n" + "## Documentation\n" + "\n" + "https://vuelog.js.org/\n" + "\n" + "\n" + "## Changelog\n" + "\n" + "https://vuelog.js.org/#/page/changelog/\n" + "\n" + "## License\n" + "\n" + "[MIT](http://opensource.org/licenses/MIT)\n" + "\n" + "Copyright (c) 2016-2017 [Leo Deng](https://myst729.github.io/)"
+        'build_website_1': {
+            id: 'build_website_1',
+            router: '/articles/build_website_1',
+            src: 'https://raw.githubusercontent.com/JiangWeixian/HTMLlearning/master/README/articles/Github-%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%BB%BA%E7%AB%8B%E8%AF%B4%E6%98%8E/img/build-website-1stpater-homepage.png',
+            alt: 'build_website_1',
+            color: 'black',
+            time: '2018-03-05',
+            content: 'Github个人博客，建站说明第一章。本地化打包Vue项目',
+            title: 'Github个人博客 | 建站说明第一章',
+            markdownData: "# Github个人博客建立 - 前期准备\n" + ">  技术说明；前期准备；\n" + "\n" + "<!-- TOC -->\n" + "\n" + "- [Github个人博客建立 - 前期准备](#github个人博客建立---前期准备)\n" + "    - [序](#序)\n" + "    - [技术要求](#技术要求)\n" + "    - [正文 - 前期准备](#正文---前期准备)\n" + "        - [建立`Vue`工程](#建立vue工程)\n" + "            - [更多细节设置](#更多细节设置)\n" + "\n" + "<!-- /TOC -->\n" + "\n" + "## 序\n" + "\n" + "现在所看到的网站就是寄托于`Github`建立的个人网站。网站所有数据都保存在`Github`上，包括图片、文章等。所未尽善尽美，望海涵。\n" + "\n" + "本章介绍，如何本地打包`Vue`工程。\n" + "\n" + "## 技术要求\n" + "\n" + "* Vue\n" + "* JS\n" + "\n" + "仅仅是如此而已，没有用到其他东西了。\n" + "\n" + "## 正文 - 前期准备\n" + "\n" + "### 建立`Vue`工程\n" + "\n" + "利用`vue-cli`命令初始化`Vue`工程。该教程见[链接](https://cn.vuejs.org/v2/guide/installation.html)。最终建立工程目录如下：\n" + "\n" + "```\n" + ".\n" + "├── build\n" + "├── config\n" + "├── index.html\n" + "├── node_modules\n" + "├── package.json\n" + "├── package-lock.json\n" + "├── README.md\n" + "├── src\n" + "└── static\n" + "```\n" + "\n" + "**注意**：初始化工程时候，并不建议添加任何代码检测工具，以及测试工具。\n" + "\n" + "在将工程打包之前，对以下文件做修改：\n" + "\n" + "* `config/index.js`在`build`一项中，修改\n" + "\n" + "```\n" + "assetsPublicPath: '/' 为 assetsPublicPath: './',\n" + "```\n" + "\n" + "**注意：** 意为'./'为根目录，因此在之后代码编写时候要切记这一点。\n" + "\n" + "对于一个新建工程，以上修改已经足够。此时在工程根目录下执行`npm run build`。可以发现根目录中多了一个`dist`文件夹，文件夹中有`index.html`，如果可以在浏览器中显示，则工程打包成功。\n" + "\n" + "#### 更多细节设置\n" + "\n" + "假设并不是新建的`Vue`工程，而在工程中使用了`vue-router`以及使用了本地图片。则需要更多的设置。\n" + "\n" + "* `vue-router` - 如果要打包工程，必须取消`vue-router`的`history mode`。使用`Github`服务器处理路由。\n" + "* 若`vue`组件中使用了本地化文件（包括图片，字体）。则在`build/utils.js`进行修改，如下：\n" + "\n" + "```\n" + "if (options.extract) {\n" + "      return ExtractTextPlugin.extract({\n" + "        use: loaders,\n" + "        fallback: 'vue-style-loader',\n" + "        publicPath: '../../'  \n" + "      })\n" + "    } else {\n" + "      return ['vue-style-loader'].concat(loaders)\n" + "    }\n" + "```\n" + "\n" + "以上。在工程根目录下执行`npm run build`。可以发现根目录中多了一个`dist`文件夹，文件夹中有`index.html`，如果可以在浏览器中显示下图，则工程打包成功。\n" + "\n" + "![首页缩略](https://raw.githubusercontent.com/JiangWeixian/HTMLlearning/master/README/articles/Github-%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%BB%BA%E7%AB%8B%E8%AF%B4%E6%98%8E/img/build-website-1stpater-homepage.png)\n" + "\n" + "**在下一章中，说明如何将项目托管至Github上。**\n"
         }
     }
 };
@@ -46,6 +84,24 @@ var getters = {
         return function (id) {
             return state.articleThreads[id];
         };
+    },
+    get_articlelists: function get_articlelists(state) {
+        return state.articleLists.map(function (id) {
+            var item = state.articleThreads[id];
+            item.style = {
+                color: item.color
+            };
+            return item;
+        });
+    },
+    get_projectlists: function get_projectlists(state) {
+        return state.projectLists.map(function (id) {
+            var item = state.projectThreads[id];
+            item.style = {
+                color: item.color
+            };
+            return item;
+        });
     },
     get_seachcontent: function get_seachcontent(state) {
         return state.searchContent;

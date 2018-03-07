@@ -1,10 +1,10 @@
 .article-content {
     width: 65%;
-    
     margin: 0 auto;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
-    font-family: 'Noto Sans', sans-serif, 'Roboto', sans-serif;;
+    font-family: 'Noto Sans', sans-serif, 'Roboto', sans-serif;
+    font-size: 1.4em!important;
     text-align: left;
     word-wrap: break-word;
     color: #333;
@@ -167,14 +167,14 @@
 
 .article-content ol ol,
 .article-content ul ol {
-    list-style-type: lower-roman;
+    list-style-type: disc!important;
 }
 
 .article-content ul ul ol,
 .article-content ul ol ol,
 .article-content ol ul ol,
 .article-content ol ol ol {
-    list-style-type: lower-alpha;
+    list-style-type: circle!important;
 }
 
 .article-content dd {

@@ -157,6 +157,9 @@ export default {
     footer .linkme {
         margin: 1.5rem 0 0 0;
     }
+    footer .linkme ul {
+        list-style: none;
+    }
     footer .linkme ul li img {
         width: 2rem;
         height: 2rem;
