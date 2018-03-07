@@ -47,7 +47,7 @@
                   </nav>
                   <ul class="container">
                       <li class="paper card" v-for="item in items">
-                          <div class="card-img">
+                          <div class="card-img" @click="link(item.router)">
                               <img :src="item.src" :alt="item.id">
                               <div class="card-intro">
                                   <p class="card-title">{{ item.title }}</p>
@@ -72,22 +72,28 @@ export default {
         return {
             msg: 'Welcome to Your Vue.js App',
             selectedItem: 'articles',
-            projectsLists: ['p_1', 'p_2', 'p_3'],
+            projectsLists: ['onepaper', 'plugins', 'ui'],
             articlesLists: ['a_1'],
             projectsThreads: {
-                'p_1': {
+                'onepaper': {
+                    id: 'onepaper',
+                    router: '/onepaper',
                     src: 'https://raw.githubusercontent.com/JiangWeixian/HTMLlearning/master/README/projects/projects-onepaper.jpg',
                     title: 'ONEPAPER',
                     time: '2018-10-1',
                     content: '单页Vue页面，UI/动画/组件设计。属于练手项目'
                 },
-                'p_2': {
+                'plugins': {
+                    id: 'plugins',
+                    router: '/',
                     src: 'https://raw.githubusercontent.com/JiangWeixian/HTMLlearning/master/README/projects/projects-components.jpg',
-                    title: 'COMPONENTS',
+                    title: 'PLUGINS',
                     time: '2018-03-05',
                     content: '单页Vue页面，UI/动画/组件设计。属于练手项目'
                 },
-                'p_3': {
+                'ui': {
+                    id: 'ui',
+                    router: '/',
                     src: 'https://raw.githubusercontent.com/JiangWeixian/HTMLlearning/master/README/projects/projects-uirules.jpg',
                     title: 'UI',
                     time: '2018-10-1',
@@ -96,6 +102,8 @@ export default {
             },
             articlesThreads: {
                 'a_1': {
+                    id: 'a_1',
+                    router: '/articles/a_1',
                     src: require('.././assets/img/avatar.jpg'),
                     title: 'ONEPAPER',
                     time: '2018-10-1',
@@ -116,6 +124,9 @@ export default {
     methods: {
         select(type) {
             this.selectedItem = type
+        },
+        link(url) {
+            this.$router.push({ path: url })
         }
     }
 }

@@ -63,7 +63,7 @@
     width: 100%;
     height: 100vh;
     overflow: hidden;
-    background: url("../../assets/img/20171012.jpg");
+    background: url("https://raw.githubusercontent.com/JiangWeixian/HTMLlearning/master/README/projects/onepaper/cityinfo-bg.jpg");
     background-size: cover;
     position: relative;
   }
@@ -89,7 +89,7 @@
     content: '';
     width: 60rem;
     height: 30rem;
-    background-image: url('../../assets/img/20171012.jpg');
+    background-image: url("https://raw.githubusercontent.com/JiangWeixian/HTMLlearning/master/README/projects/onepaper/cityinfo-bg.jpg");
     background-position: center;
     background-size: cover;
     background-attachment: fixed;

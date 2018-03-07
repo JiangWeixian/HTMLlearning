@@ -32,6 +32,4 @@ new _vue2.default({
         App: _App2.default
     }
 });
-
-_store2.default.dispatch('initArticles');
 //# sourceMappingURL=main.js.map

@@ -9,9 +9,10 @@
 }
 .card .card-img {
     width: 100%;
-    /*height: 20rem;*/
+    display: block;
     overflow: hidden;
     position: relative;
+    cursor: pointer;
 }
 .card .card-img img {
     width: inherit;

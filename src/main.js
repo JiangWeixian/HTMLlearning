@@ -18,4 +18,3 @@ new Vue({
     }
 })
 
-store.dispatch('initArticles');

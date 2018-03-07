@@ -70,8 +70,8 @@ textarea::-webkit-input-placeholder{
 ::-webkit-scrollbar-thumb {
     -webkit-border-radius: 10px;
     border-radius: 10px;
-    background: #673ab7;
+    background: #ccc;
 }
 ::-webkit-scrollbar-thumb:window-inactive {
-    background: #673ab7;
+    background: #ccc;
 }

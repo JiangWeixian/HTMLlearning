@@ -20,12 +20,12 @@ const routes = [
     { path: '/', name: 'Hello', component: Hello },
     { path: '/articles/:id', name: 'article', component: article, props: true},
     { path: '/div2img', name: 'Div2Img', component: Div2Img},
-    { path: '/OnePaper', name: 'neo', component: neo, },
-    { path: '/OnePaper/cityInfo', name: 'city', component: City},
-    { path: '/OnePaper/shareCard', name: 'shareCard', component: OnePaperShareCard},
-    { path: '/OnePaper/loginBall', name: 'loginBall', component: OnePaperLoginBall },
-    { path: '/OnePaper/weather', name: 'weather', component: OnePaperWeather },
-    { path: '/OnePaper/beginWithDogs', name: 'dogs', component: OnePaperBeginWithDogs }
+    { path: '/onepaper', name: 'neo', component: neo, },
+    { path: '/onepaper/cityInfo', name: 'city', component: City},
+    { path: '/onepaper/shareCard', name: 'shareCard', component: OnePaperShareCard},
+    { path: '/onepaper/loginBall', name: 'loginBall', component: OnePaperLoginBall },
+    { path: '/onepaper/weather', name: 'weather', component: OnePaperWeather },
+    { path: '/onepaper/beginWithDogs', name: 'dogs', component: OnePaperBeginWithDogs }
 ]
 
 const router = new Router({

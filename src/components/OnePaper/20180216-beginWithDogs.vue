@@ -30,7 +30,7 @@
         width: 100%;
         height: 100vh;
         overflow: hidden;
-        background: url("../../assets/img/juuso-salminen-543409.jpg");
+        background: url("https://raw.githubusercontent.com/JiangWeixian/HTMLlearning/master/README/projects/onepaper/begin-with-dogs-bg.jpg");
         background-size: cover;
         background-position-y: center;
         background-position-x: 5rem;

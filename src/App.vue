@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-      <header>
+      <header v-show="isShow">
           <div class="main clearfix">
               <div class="pull-left">
                   <nav>
@@ -17,7 +17,7 @@
           </div>
       </header>
       <router-view></router-view>
-      <footer>
+      <footer v-show="isShow">
           <div class="main clearfix">
               <div class="pull-left">
                   <p class="author">蒋微咸</p>
@@ -40,7 +40,22 @@ export default {
     name: 'app',
     data() {
         return {
-            routerName: 'HOMEPAGE'
+            routerName: 'HOMEPAGE',
+            isShow: true
+        }
+    },
+    watch: {
+        $route(to, from) {
+            console.log(to)
+            console.log(from)
+            let path = to.path.split('/');
+            this.routerName = path[1].toUpperCase()? path[1].toUpperCase(): 'HOMEPAGE';
+            if (path.length > 2 && path[1].toLowerCase() === 'onepaper') {
+                this.isShow = false
+            }
+            else {
+                this.isShow = true
+            }
         }
     },
     methods: {
@@ -51,7 +66,13 @@ export default {
     },
     created() {
         let path = this.$route.path.split('/');
-        this.routerName = path[1].toUpperCase()? path[1].toUpperCase(): 'HOMEPAGE'
+        this.routerName = path[1].toUpperCase()? path[1].toUpperCase(): 'HOMEPAGE';
+        if (path.length > 2 && path[1].toLowerCase() === 'onepaper') {
+            this.isShow = false
+        }
+        else {
+            this.isShow = true
+        }
     }
 }
 </script>
@@ -134,7 +155,7 @@ export default {
         font-size: 1rem;
     }
     footer .linkme {
-        margin: 1.5rem 4rem 0 0;
+        margin: 1.5rem 0 0 0;
     }
     footer .linkme ul li img {
         width: 2rem;

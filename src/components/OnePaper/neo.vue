@@ -4,7 +4,7 @@
             <li class="neo-item" v-for="item in sortedPapers">
                 <p class="neo-time">{{ item.time }} <span class="tag-bug" v-show="item.bug">BUG</span> </p>
                 <div class="paper card">
-                    <div class="card-img">
+                    <div class="card-img" @click="link(item.router)">
                         <img :src="item.src" :alt="item.id">
                         <div class="card-intro" :style="item.style">
                             <p class="card-title">{{ item.title }}</p>
@@ -31,8 +31,9 @@
                 papers: {
                     'loginBall': {
                         id: 'loginBall',
+                        router: '/onepaper/loginBall',
                         time: '2017-10-28',
-                        src: require('../../assets/img/onePaper/loginBall.png'),
+                        src: 'https://raw.githubusercontent.com/JiangWeixian/HTMLlearning/master/README/projects/onepaper/onepaper-loginball.png',
                         alt: 'login',
                         color: 'white',
                         title: '<login-ball>',
@@ -41,8 +42,9 @@
                     },
                     'weather': {
                         id: 'weather',
+                        router: '/onepaper/weather',
                         time: '2017-10-30',
-                        src: require('../../assets/img/onePaper/weather.png'),
+                        src: 'https://raw.githubusercontent.com/JiangWeixian/HTMLlearning/master/README/projects/onepaper/onepaper-weather.png',
                         alt: 'weather',
                         color: 'white',
                         title: '<weather-card>',
@@ -51,8 +53,9 @@
                     },
                     'cityInfo': {
                         id: 'cityInfo',
+                        router: '/onepaper/cityInfo',
                         time: '2017-10-12',
-                        src: require('../../assets/img/onePaper/cityInfo.png'),
+                        src: 'https://raw.githubusercontent.com/JiangWeixian/HTMLlearning/master/README/projects/onepaper/onepaper-city-info.png',
                         alt: 'shanghai',
                         color: 'white',
                         title: '<city-info>',
@@ -61,8 +64,9 @@
                     },
                     'shareCard': {
                         id: 'shareCard',
+                        router: '/onepaper/shareCard',
                         time: '2017-10-28',
-                        src: require('../../assets/img/onePaper/shareCard.png'),
+                        src: 'https://raw.githubusercontent.com/JiangWeixian/HTMLlearning/master/README/projects/onepaper/onepaper-sharecard.png',
                         alt: 'shareCard',
                         color: 'white',
                         title: '<share-card>',
@@ -71,8 +75,9 @@
                     },
                     'beginWithDogs': {
                         id: 'beginWithDogs',
+                        router: '/onepaper/beginWithDogs',
                         time: '2018-02-16',
-                        src: require('../../assets/img/onePaper/beginWithDogs.png'),
+                        src: 'https://raw.githubusercontent.com/JiangWeixian/HTMLlearning/master/README/projects/onepaper/onepaper-beginwithdogs.png',
                         alt: '2018',
                         color: 'black',
                         title: '<begin-with-dogs>',
@@ -107,8 +112,7 @@
         },
         methods: {
             link(url) {
-                console.log(url)
-                this.$router.push({ path: '/onePaper/'+ url })
+                this.$router.push({ path: url })
             }
         }
     }
@@ -152,7 +156,6 @@
         line-height: 1rem;
         font-weight: normal;
         padding: 0.2rem;
-        border-radius: 3px;
     }
     .neo-item .card-title {
         font-size: 2rem;
