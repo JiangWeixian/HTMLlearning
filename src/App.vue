@@ -46,8 +46,6 @@ export default {
     },
     watch: {
         $route(to, from) {
-            console.log(to)
-            console.log(from)
             let path = to.path.split('/');
             this.routerName = path[1].toUpperCase()? path[1].toUpperCase(): 'HOMEPAGE';
             if (path.length > 2 && path[1].toLowerCase() === 'onepaper') {

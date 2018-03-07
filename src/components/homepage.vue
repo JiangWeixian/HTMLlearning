@@ -22,19 +22,21 @@
               </section>
               <section class="stack-info">
                   <div class="drawer paper">
-                      <div class="order title clearfix">
+                      <div class="order title clearfix" @click="dropUp()">
                           <p class="title-icon pull-left"><i class="material-icons lh-36">web</i></p>
                           <p class="title-name lh-36 pull-left">前端技术</p>
                           <p class="title-switch pull-right"><i class="material-icons lh-36">more_horiz</i></p>
                       </div>
-                      <ul class="drawer-container">
-                          <li><svg xmlns='http://www.w3.org/2000/svg' width='146' height='47'><foreignObject width='100%' height='100%'><div xmlns='http://www.w3.org/1999/xhtml' style='font-family: Raleway; font-size: 0px; color: white; text-transform: uppercase; padding: 0px'><p class="header" style="display: inline-block; padding: 0.6rem 1rem; font-size: 12px; letter-spacing: 3px; background-color: rgb(159, 168, 218);">skill</p> <p class="tail" style="display: inline-block; padding: 0.6rem 1rem; font-weight: 700; font-size: 12px; letter-spacing: 3px; background-color: rgb(63, 81, 181);">css</p></div></foreignObject></svg></li>
-                          <li><svg xmlns='http://www.w3.org/2000/svg' width='146' height='47'><foreignObject width='100%' height='100%'><div xmlns='http://www.w3.org/1999/xhtml' style='font-family: Raleway; font-size: 0px; color: white; text-transform: uppercase; padding: 0px'><p class="header" style="display: inline-block; padding: 0.6rem 1rem; font-size: 12px; letter-spacing: 3px; background-color: rgb(159, 168, 218);">skill</p> <p class="tail" style="display: inline-block; padding: 0.6rem 1rem; font-weight: 700; font-size: 12px; letter-spacing: 3px; background-color: rgb(63, 81, 181);">css</p></div></foreignObject></svg></li>
-                          <li><svg xmlns='http://www.w3.org/2000/svg' width='146' height='47'><foreignObject width='100%' height='100%'><div xmlns='http://www.w3.org/1999/xhtml' style='font-family: Raleway; font-size: 0px; color: white; text-transform: uppercase; padding: 0px'><p class="header" style="display: inline-block; padding: 0.6rem 1rem; font-size: 12px; letter-spacing: 3px; background-color: rgb(159, 168, 218);">skill</p> <p class="tail" style="display: inline-block; padding: 0.6rem 1rem; font-weight: 700; font-size: 12px; letter-spacing: 3px; background-color: rgb(63, 81, 181);">css</p></div></foreignObject></svg></li>
-                          <li><svg xmlns='http://www.w3.org/2000/svg' width='146' height='47'><foreignObject width='100%' height='100%'><div xmlns='http://www.w3.org/1999/xhtml' style='font-family: Raleway; font-size: 0px; color: white; text-transform: uppercase; padding: 0px'><p class="header" style="display: inline-block; padding: 0.6rem 1rem; font-size: 12px; letter-spacing: 3px; background-color: rgb(159, 168, 218);">skill</p> <p class="tail" style="display: inline-block; padding: 0.6rem 1rem; font-weight: 700; font-size: 12px; letter-spacing: 3px; background-color: rgb(63, 81, 181);">css</p></div></foreignObject></svg></li>
-                      </ul>
-                      <div class="drawer-hander">
-                          <i class="material-icons md-18">keyboard_arrow_up</i>
+                      <div class="drawer-container-wrapper">
+                          <ul class="drawer-container">
+                              <li><svg xmlns='http://www.w3.org/2000/svg' width='146' height='47'><foreignObject width='100%' height='100%'><div xmlns='http://www.w3.org/1999/xhtml' style='font-family: Raleway; font-size: 0px; color: white; text-transform: uppercase; padding: 0px'><p class="header" style="display: inline-block; padding: 0.6rem 1rem; font-size: 12px; letter-spacing: 3px; background-color: rgb(159, 168, 218);">skill</p> <p class="tail" style="display: inline-block; padding: 0.6rem 1rem; font-weight: 700; font-size: 12px; letter-spacing: 3px; background-color: rgb(63, 81, 181);">css</p></div></foreignObject></svg></li>
+                              <li><svg xmlns='http://www.w3.org/2000/svg' width='146' height='47'><foreignObject width='100%' height='100%'><div xmlns='http://www.w3.org/1999/xhtml' style='font-family: Raleway; font-size: 0px; color: white; text-transform: uppercase; padding: 0px'><p class="header" style="display: inline-block; padding: 0.6rem 1rem; font-size: 12px; letter-spacing: 3px; background-color: rgb(159, 168, 218);">skill</p> <p class="tail" style="display: inline-block; padding: 0.6rem 1rem; font-weight: 700; font-size: 12px; letter-spacing: 3px; background-color: rgb(63, 81, 181);">css</p></div></foreignObject></svg></li>
+                              <li><svg xmlns='http://www.w3.org/2000/svg' width='146' height='47'><foreignObject width='100%' height='100%'><div xmlns='http://www.w3.org/1999/xhtml' style='font-family: Raleway; font-size: 0px; color: white; text-transform: uppercase; padding: 0px'><p class="header" style="display: inline-block; padding: 0.6rem 1rem; font-size: 12px; letter-spacing: 3px; background-color: rgb(159, 168, 218);">skill</p> <p class="tail" style="display: inline-block; padding: 0.6rem 1rem; font-weight: 700; font-size: 12px; letter-spacing: 3px; background-color: rgb(63, 81, 181);">css</p></div></foreignObject></svg></li>
+                              <li><svg xmlns='http://www.w3.org/2000/svg' width='146' height='47'><foreignObject width='100%' height='100%'><div xmlns='http://www.w3.org/1999/xhtml' style='font-family: Raleway; font-size: 0px; color: white; text-transform: uppercase; padding: 0px'><p class="header" style="display: inline-block; padding: 0.6rem 1rem; font-size: 12px; letter-spacing: 3px; background-color: rgb(159, 168, 218);">skill</p> <p class="tail" style="display: inline-block; padding: 0.6rem 1rem; font-weight: 700; font-size: 12px; letter-spacing: 3px; background-color: rgb(63, 81, 181);">css</p></div></foreignObject></svg></li>
+                          </ul>
+                          <div class="drawer-hander" @click="dropDown()">
+                              <i class="material-icons md-18">keyboard_arrow_up</i>
+                          </div>
                       </div>
                   </div>
               </section>
@@ -67,6 +69,7 @@
 
 <script>
     import { mapGetters } from 'vuex'
+    import  Velocity from 'velocity-animate'
     export default {
         name: 'hello', 
         data () {
@@ -91,6 +94,17 @@
             }, 
             link(url) {
                 this.$router.push({ path: url })
+            },
+            dropDown() {
+                let drawer = document.querySelector('.drawer-container-wrapper');
+                Velocity(drawer, {height: '0'}, {duration: 100, easing: "easeInSine"})
+            },
+            dropUp() {
+                let drawer = document.querySelector('.drawer-container-wrapper'),
+                    container = document.querySelector('.drawer-container'),
+                    hander = document.querySelector('.drawer-hander');
+                let height = container.offsetHeight + hander.offsetHeight;
+                Velocity(drawer, {height: height }, {duration: 100, easing: "easeInSine"})
             }
         }
     }

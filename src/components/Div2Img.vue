@@ -1,6 +1,6 @@
 <template>
-  <div id="BADGEIMG">
-    <div id="BADGE-INPUT" class="badge-input">
+  <div id="BADGEIMG" class="badgeimg">
+      <div id="BADGE-INPUT" class="badge-input">
       <select class="badge-header-select" v-model="selectHeader">
         <option disable value="">PLEASE CHOOSE ONE TYPE</option>
         <option value="AGES">AGES</option>
@@ -23,12 +23,14 @@
       <input type="text" name="badge-header-input" value="" v-model="inputHeader">
       <input type="text" name="badge-tail-input" value="" v-model="tail">
     </div>
-    <div id="BADGE" style="font-family: Raleway; font-size: 0px; color: white; text-transform: uppercase;">
+      <div id="BADGE" style="font-family: Raleway; font-size: 0px; color: white; text-transform: uppercase;">
       <p class="header" :style="style.headerStyle">{{ selectHeader || inputHeader}}</p>
       <p class="tail" :style="style.tailStyle">{{ tail }}</p>
     </div>
-    <button v-on:click="convert()">CONVERT</button>
-    <h2>Output Image:</h2>
+      <button v-on:click="convert()">CONVERT</button>
+      <div class="badge-output">
+          <h2>Output Image:</h2>
+      </div>
   </div>
 </template>
 
@@ -112,7 +114,7 @@
             '</svg>'
           var img = new Image()
           img.src = data
-          document.getElementsByTagName('body')[0].appendChild(img)
+          document.querySelector('.badge-output')[0].appendChild(img)
         }
       }
     }
@@ -121,24 +123,28 @@
 </script>
 
 <style>
-  .badge-input {
+    .badgeimg {
+        padding-top: 5rem;
+        min-height: 100vh;
+    }
+    .badge-input {
     margin-bottom: 1rem;
-  }
-
-  .badge-input input {
+    }
+    
+    .badge-input input {
     border: 1px solid black;
-  }
-
-  .header {
+    }
+    
+    .header {
     background-color: #ef5350;
     ;
-  }
-
-  .tail {
+    }
+    
+    .tail {
     background-color: #f44336;
-  }
-
-  button {
+    }
+    
+    button {
     margin-top: 1rem;
-  }
+    }
 </style>
