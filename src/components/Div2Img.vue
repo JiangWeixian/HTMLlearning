@@ -114,7 +114,7 @@
             '</svg>'
           var img = new Image()
           img.src = data
-          document.querySelector('.badge-output')[0].appendChild(img)
+          document.querySelector('.badge-output').appendChild(img)
         }
       }
     }
