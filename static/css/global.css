@@ -4,6 +4,10 @@
     box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.1);
 }
 
+.page-container {
+    padding-top: 5rem;
+}
+
 .card {
     overflow: hidden;
 }
@@ -63,6 +67,7 @@
     width: 100%;
     cursor: pointer;
     height: 3rem;
+    overflow: hidden;
 }
 .title:hover {
     background-color: #f5f5f5;

@@ -132,9 +132,12 @@ export default {
         color: #ccc;
     }
     footer {
+        width: 100%;
         background-color: white;
         box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
-        position: relative;
+        position: absolute;
+        left: 0;
+        bottom: 0;
         z-index: 99;
     }
     footer .main {

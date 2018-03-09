@@ -20,9 +20,9 @@ var _homepage = require('@/components/homepage');
 
 var _homepage2 = _interopRequireDefault(_homepage);
 
-var _Div2Img = require('@/components/Div2Img');
+var _fortheBadge = require('@/components/fortheBadge');
 
-var _Div2Img2 = _interopRequireDefault(_Div2Img);
+var _fortheBadge2 = _interopRequireDefault(_fortheBadge);
 
 var _neo = require('@/components/OnePaper/neo');
 
@@ -56,7 +56,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 _vue2.default.use(_vueRouter2.default);
 
-var routes = [{ path: '/', name: 'Hello', component: _homepage2.default }, { path: '/articles/:id', name: 'article', component: _article2.default, props: true }, { path: '/div2img', name: 'Div2Img', component: _Div2Img2.default }, { path: '/onepaper', name: 'neo', component: _neo2.default }, { path: '/onepaper/cityInfo', name: 'city', component: _city2.default }, { path: '/onepaper/shareCard', name: 'shareCard', component: _shareCard2.default }, { path: '/onepaper/loginBall', name: 'loginBall', component: _LoginBall2.default }, { path: '/onepaper/weather', name: 'weather', component: _Weather2.default }, { path: '/onepaper/beginWithDogs', name: 'dogs', component: _beginWithDogs2.default }];
+var routes = [{ path: '/', name: 'Hello', component: _homepage2.default }, { path: '/articles/:id', name: 'article', component: _article2.default, props: true }, { path: '/forthebadge', name: 'forthe-badge', component: _fortheBadge2.default }, { path: '/onepaper', name: 'neo', component: _neo2.default }, { path: '/onepaper/cityInfo', name: 'city', component: _city2.default }, { path: '/onepaper/shareCard', name: 'shareCard', component: _shareCard2.default }, { path: '/onepaper/loginBall', name: 'loginBall', component: _LoginBall2.default }, { path: '/onepaper/weather', name: 'weather', component: _Weather2.default }, { path: '/onepaper/beginWithDogs', name: 'dogs', component: _beginWithDogs2.default }];
 
 var router = new _vueRouter2.default({
     routes: routes

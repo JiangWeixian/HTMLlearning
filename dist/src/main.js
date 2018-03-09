@@ -16,11 +16,16 @@ var _store = require('./store');
 
 var _store2 = _interopRequireDefault(_store);
 
+var _lodash = require('lodash');
+
+var _lodash2 = _interopRequireDefault(_lodash);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// The Vue build version to load with the `import` command
+_vue2.default.config.productionTip = false; // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
-_vue2.default.config.productionTip = false;
+
+_vue2.default.prototype._ = _lodash2.default;
 
 /* eslint-disable no-new */
 new _vue2.default({

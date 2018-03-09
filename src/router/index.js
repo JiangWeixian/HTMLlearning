@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import store from '../store'
 
 import Hello from '@/components/homepage'
-import Div2Img from '@/components/Div2Img'
+import fortheBadge from '@/components/fortheBadge'
 
 import neo from '@/components/OnePaper/neo'
 import City from '@/components/OnePaper/20171012-city'
@@ -19,7 +19,7 @@ Vue.use(Router);
 const routes = [
     { path: '/', name: 'Hello', component: Hello },
     { path: '/articles/:id', name: 'article', component: article, props: true},
-    { path: '/div2img', name: 'Div2Img', component: Div2Img},
+    { path: '/forthebadge', name: 'forthe-badge', component: fortheBadge},
     { path: '/onepaper', name: 'neo', component: neo, },
     { path: '/onepaper/cityInfo', name: 'city', component: City},
     { path: '/onepaper/shareCard', name: 'shareCard', component: OnePaperShareCard},
