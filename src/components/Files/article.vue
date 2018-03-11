@@ -20,7 +20,13 @@
         },
         computed: {
             content() {
-                return this.$store.getters.currentArticle(this.id)
+                let articleData = this.$store.getters.currentArticle(this.id);
+                if (articleData) {
+                    return articleData
+                }
+                else {
+                    this.$router.push({ path: '/not_found' })
+                }
             },
             markedContent() {
                 return marked(this.content.markdownData)

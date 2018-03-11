@@ -47,7 +47,7 @@ export default {
     watch: {
         $route(to, from) {
             let path = to.path.split('/');
-            this.routerName = path[1].toUpperCase()? path[1].toUpperCase(): 'HOMEPAGE';
+            this.routerName = to.path.name.toUpperCase();
             if (path.length > 2 && path[1].toLowerCase() === 'onepaper') {
                 this.isShow = false
             }
@@ -64,7 +64,7 @@ export default {
     },
     created() {
         let path = this.$route.path.split('/');
-        this.routerName = path[1].toUpperCase()? path[1].toUpperCase(): 'HOMEPAGE';
+        this.routerName = this.$route.name.toUpperCase();
         if (path.length > 2 && path[1].toLowerCase() === 'onepaper') {
             this.isShow = false
         }
@@ -89,7 +89,9 @@ export default {
         background-color: white;
         box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
         position: fixed;
-        z-index: 999;
+        left: 0;
+        top: 0;
+        z-index: 99;
     }
     header .main {
         width: 65%;
@@ -132,11 +134,13 @@ export default {
         color: #ccc;
     }
     footer {
+        display: flex;
         width: 100%;
         background-color: white;
         box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
-        position: absolute;
+        position: relative;
         left: 0;
+        top: 0;
         bottom: 0;
         z-index: 99;
     }
@@ -165,4 +169,17 @@ export default {
         width: 2rem;
         height: 2rem;
     }
+
+    @media screen and (max-width: 1280px){
+        header .main {
+            width: 70%;
+        }
+    }
+
+    @media screen and (max-width: 1024px){
+        header .main {
+            width: 90%;
+        }
+    }
+    
 </style>

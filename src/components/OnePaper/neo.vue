@@ -1,6 +1,6 @@
 <template>
     <div id="NEO" class="neo">
-        <ul class="neo-lists">
+        <ul class="neo-lists page-container">
             <li class="neo-item" v-for="item in sortedPapers">
                 <p class="neo-time">{{ item.time }} <span class="tag-bug" v-show="item.bug">BUG</span> </p>
                 <div class="paper card">
@@ -119,10 +119,6 @@
 </script>
 
 <style scoped>
-    .neo-lists {
-        padding-top: 6rem;
-        min-height: 100vh;
-    }
     .neo-item {
         display: block;
         width: 800px;
