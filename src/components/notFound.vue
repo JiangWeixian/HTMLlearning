@@ -3,23 +3,24 @@
         background-color: #f5f5f5;
     }
     .notfound-wrapper {
-        padding-top: 20rem;
         font-family: 'Raleway', sans-serif;
-        color: #ccc;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 50%;
+        margin-top: -15rem;
     }
     .notfound-card {
-        width: 30%;
         margin: 0 auto;
-        padding: 1rem 0rem 2rem 0rem;
+        text-align: center;
     }
-    .notfound-card p:nth-child(1) {
+    .notfound-card p {
         color: #4b1d27;
         font-size: 15rem;
         font-weight: bolder;
-        line-height: 10rem;
     }
     button {
-        margin-top: 5rem;
+        margin-top: 2rem;
         background-color: white;
     }
     button:active {

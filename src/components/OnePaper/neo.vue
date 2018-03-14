@@ -1,3 +1,65 @@
+<style scoped>
+    .neo-item {
+        display: block;
+        width: 40%;
+        margin: 0 auto;
+    }
+    .neo-time {
+        text-align: left;
+        font-family: 'Roboto Mono', monospace;
+        font-weight: bolder;
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+        position: relative;
+        color: #ccc;
+        margin-top: 1rem;
+    }
+    .neo-time::before {
+        content: ' ';
+        width: 10px;
+        height: 10px;
+        border-radius: 5px;
+        display: block;
+        background: #ccc;
+        position: absolute;
+        left: -20px;
+        top: 5px;
+    }
+    .neo-time .tag-bug {
+        color: white;
+        background-color: red;
+        font-size: 1rem;
+        line-height: 1rem;
+        font-weight: normal;
+        padding: 0.2rem;
+    }
+    .neo-item .card-title {
+        font-size: 2rem;
+    }
+
+    @media screen and (max-width: 1440px) {
+        .neo-item {
+            width: 60%;
+        }
+    }
+    
+    @media screen and (max-width: 768px) {
+        .neo-item {
+            width: 70%;
+        }
+    }
+
+    @media screen and (max-width: 425px) {
+        .neo-time {
+            display: none;
+        }
+        .neo-item {
+            width: 95%;
+        }
+    }
+</style>
+
+
 <template>
     <div id="NEO" class="neo">
         <ul class="neo-lists page-container">
@@ -118,42 +180,3 @@
     }
 </script>
 
-<style scoped>
-    .neo-item {
-        display: block;
-        width: 800px;
-        margin: 0 auto;
-        padding-bottom: 1.5rem;
-    }
-    .neo-time {
-        text-align: left;
-        font-family: 'Roboto Mono', monospace;
-        font-weight: bolder;
-        font-size: 1.5rem;
-        line-height: 1.5rem;
-        position: relative;
-        color: #ccc;
-    }
-    .neo-time::before {
-        content: ' ';
-        width: 10px;
-        height: 10px;
-        border-radius: 5px;
-        display: block;
-        background: #ccc;
-        position: absolute;
-        left: -20px;
-        top: 5px;
-    }
-    .neo-time .tag-bug {
-        color: white;
-        background-color: red;
-        font-size: 1rem;
-        line-height: 1rem;
-        font-weight: normal;
-        padding: 0.2rem;
-    }
-    .neo-item .card-title {
-        font-size: 2rem;
-    }
-</style>

@@ -1,8 +1,19 @@
+.show {
+    display: block!important;
+}
 
+.hide {
+    display: none;
+}
+
+.hidden {
+    overflow: hidden;
+}
 
 .paper {
     background-color: white;
     margin-top: 1rem;
+    margin-bottom: 1rem;
     box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.1);
 }
 
@@ -64,8 +75,8 @@
 }
 .selector a.selected-name:hover,
 .selector a.active {
-    color: black;
-    border-bottom: 3px solid black;
+    color: #0c72ee;
+    border-bottom: 3px solid #0c72ee;
 }
 .title {
     width: 100%;

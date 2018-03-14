@@ -20,12 +20,17 @@ var _lodash = require('lodash');
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
+var _velocityAnimate = require('velocity-animate');
+
+var _velocityAnimate2 = _interopRequireDefault(_velocityAnimate);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_vue2.default.config.productionTip = false; // The Vue build version to load with the `import` command
+// The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
-
+_vue2.default.config.productionTip = false;
 _vue2.default.prototype._ = _lodash2.default;
+_vue2.default.prototype._ani = _velocityAnimate2.default;
 
 /* eslint-disable no-new */
 new _vue2.default({

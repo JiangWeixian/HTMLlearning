@@ -1,5 +1,7 @@
 <style scoped>
-    
+    .sidernav {
+        overflow-x: visible;
+    }
 </style>
 
 <template>

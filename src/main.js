@@ -5,9 +5,11 @@ import App from './App'
 import router from './router'
 import store from './store'
 import lodash from 'lodash'
+import  Velocity from 'velocity-animate'
 
 Vue.config.productionTip = false;
 Vue.prototype._ = lodash;
+Vue.prototype._ani = Velocity;
 
 /* eslint-disable no-new */
 new Vue({

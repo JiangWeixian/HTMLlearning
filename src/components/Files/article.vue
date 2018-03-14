@@ -42,6 +42,7 @@
         padding: 4.5rem 0 2rem 0;
     }
     .article-content {
+        width: 65%;
         box-sizing: border-box;
         padding: 1rem 2rem;
         margin-top: -19rem;
@@ -50,5 +51,22 @@
         background-color: white;
         width: 100%;
         height: 20rem;
+    }
+    
+    @media screen and (max-width: 1024px) {
+        .article-content {
+            width: 80%;
+        }
+    }
+    @media screen and (max-width: 768px) {
+        .article-content {
+            width: 85%;
+        }
+    }
+
+    @media screen and (max-width: 425px) {
+        .article-content {
+            width: 95%;
+        }
     }
 </style>

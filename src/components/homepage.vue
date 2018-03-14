@@ -10,6 +10,16 @@
         margin: 0 auto;
         height: 100%;
     }
+    .sider-cover {
+        background-color: rgba(0, 0, 0, 0.2);
+        position: fixed;
+        z-index: 100;
+        display: none;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
     .personal-siderbar {
         width: 29%;
     }
@@ -80,24 +90,23 @@
         }
     }
 
-    @media screen and (max-width: 768px){
+    @media screen and (max-width: 940px){
         ::-webkit-scrollbar {
             width: 0px;
         }
         .page-container {
             height: calc(100vh - 14.5rem);
-            overflow: hidden;
         }
         .home-main .personal-siderbar {
             display: block;
-            position: absolute;
+            position: fixed;
             width: 40%;
             height: 100vh;
             background-color: white;
             overflow: auto;
-            left: 0;
+            left: -100%;
             top: 0;
-            z-index: 100;
+            z-index: 102;
             box-shadow: 1px 0px 10px 0 rgba(0, 0, 0, 0.1);
         }
         .home-main .personal-siderbar .paper {
@@ -116,8 +125,26 @@
         }
     }
     @media screen and (max-width: 425px) {
+        .home-main {
+            width: 95%;
+        }
         .home-main .personal-siderbar {
             width: 70%;
+        }
+        .mutiltype-lister nav {
+            width: 100%;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            z-index: 101;
+            margin: 0!important;
+        }
+        .mutiltype-lister .selector .selected-name {
+            width: 49%;
+            margin: 0;
+        }
+        .mutiltype-lister .container li:last-child {
+            margin-bottom: 4rem;
         }
     }
 </style>
@@ -170,16 +197,6 @@
                           </li>
                       </ul>
                   </drawer>
-                  <drawer icon-name="visibility" title-name="机器视觉技术栈">
-                      <ul class="drawer-container">
-                          <li>
-                              <svg xmlns='http://www.w3.org/2000/svg' width='255' height='47'><foreignObject width='100%' height='100%'><div xmlns='http://www.w3.org/1999/xhtml' style='font-family: Raleway; font-size: 0px; color: white; text-transform: uppercase; padding: 0px'><p class="header" style="display: inline-block; padding: 0.6rem 1rem; font-size: 12px; letter-spacing: 3px; background-color: rgb(79, 195, 247);">POWERED BY</p> <p class="tail" style="display: inline-block; padding: 0.6rem 1rem; font-weight: 700; font-size: 12px; letter-spacing: 3px; background-color: rgb(3, 169, 244);">gans&amp;cv</p></div></foreignObject></svg>
-                          </li>
-                          <li>
-                              <svg xmlns='http://www.w3.org/2000/svg' width='183' height='47'><foreignObject width='100%' height='100%'><div xmlns='http://www.w3.org/1999/xhtml' style='font-family: Raleway; font-size: 0px; color: white; text-transform: uppercase; padding: 0px'><p class="header" style="display: inline-block; padding: 0.6rem 1rem; font-size: 12px; letter-spacing: 3px; background-color: rgb(255, 205, 210);"> SKILL</p> <p class="tail" style="display: inline-block; padding: 0.6rem 1rem; font-weight: 700; font-size: 12px; letter-spacing: 3px; background-color: rgb(244, 67, 54);">python</p></div></foreignObject></svg>
-                          </li>
-                      </ul>
-                  </drawer>
               </section>
           </sider-nav>
           <div class="blog-content pull-right">
@@ -205,6 +222,7 @@
               </div>
           </div>
       </div>
+      <div class="sider-cover" @click="slideOut"></div>
   </div>
 </template>
 
@@ -242,6 +260,14 @@
             }, 
             link(url) {
                 this.$router.push({ path: url })
+            },
+            slideOut() {
+                let siderNav = document.querySelector('.personal-siderbar'),
+                    siderCover = document.querySelector('.sider-cover'),
+                    homeMain = document.querySelector('body');
+                siderCover.classList.remove('show');
+                homeMain.classList.remove('hidden');
+                Velocity(siderNav, {left: '-100%'}, {duration: 300, easing: "easeOutQuart"})
             }
         }
     }
