@@ -131,8 +131,10 @@
         .home-main .personal-siderbar {
             width: 70%;
         }
-        .mutiltype-lister nav {
+        .mutiltype-lister .selector {
             width: 100%;
+            height: 4rem;
+            line-height: 4rem;
             position: fixed;
             left: 0;
             bottom: 0;
@@ -142,6 +144,7 @@
         .mutiltype-lister .selector .selected-name {
             width: 49%;
             margin: 0;
+            height: calc(4rem - 3px);
         }
         .mutiltype-lister .container li:last-child {
             margin-bottom: 4rem;

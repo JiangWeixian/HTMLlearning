@@ -179,10 +179,13 @@ export default {
         slideIn() {
             let siderNav = document.querySelector('.personal-siderbar'),
                 siderCover = document.querySelector('.sider-cover'),
-                homeMain = document.querySelector('body');
-            siderCover.classList.add('show');
-            homeMain.classList.add('hidden');
-            Velocity(siderNav, {left: 0}, {duration: 300, easing: "easeOutQuart"})
+                homeMain = document.querySelector('body'),
+                width = document.documentElement.clientWidth || document.body.clientWidth;
+            if (width <= 940) {
+                siderCover.classList.add('show');
+                homeMain.classList.add('hidden');
+                Velocity(siderNav, {left: 0}, {duration: 300, easing: "easeOutQuart"})
+            }
         }
     },
     created() {
