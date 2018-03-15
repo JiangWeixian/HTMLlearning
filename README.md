@@ -1,6 +1,6 @@
 <div align="center" markdown="1">
      <img style="max-width: 70%" src="/README/HTML.png"/>
-     <p>Collect HTML examples&tips from internet or myself, And rewrite into vue!</p>
+     <p>Blog Resource Repositories </p>
 </div>
 
 <div align="center">
@@ -11,55 +11,10 @@
 
 </div>
 
-## 0. INTRODUCTION
+## README
 
-### How to Use it
+该博客项目线上预览地址为[蒋微咸的博客](https://jiangweixian.github.io/#/)
 
-``` bash
-git clone this project
-cd this project
-npm install
-npm run dev
-```
+This Repositories online redirected to [JiangWeixian's blog](https://jiangweixian.github.io/#/)
 
-## 1. Div2Img
 
-Inspired by this [website](http://forthebadge.com) .
-
-Follow the steps in **INTRODUCTION**, and type `localhost:8080/div2img`in your browser. you can get badge like this by youself.
-
-<div align="center">
-
-<img style="max-width: 70%" src="https://rawgit.com/JiangWeixian/HTMLlearning/master/README/winter-iscoming.svg"/>
-
-</div>
-
-But github does not support svg, so we have go to [Rawgit](https://rawgit.com/) to convert it!
-
-## 2. OnePaper
-
-Convert some ui design sources into Vue projects.
-
-### 2.1 City info
-
-<div align="center">
-
-<img style="max-width: 70%" src="/README/cityinfo.gif"/>
-
-</div>
-
-### 2.1 ShareCard
-
-<div align="center">
-
-<img style="max-width: 70%" src="/README/sharecard.gif"/>
-
-</div>
-
-### 2.2 LoginBall
-
-<div align="center">
-
-<img style="max-width: 70%" src="/README/loginball.gif"/>
-
-</div>
