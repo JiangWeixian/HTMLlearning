@@ -35,7 +35,7 @@
 }
 .card .card-img img {
     width: inherit;
-    object-fit: cover;
+    object-fit: fill;
 }
 .card .card-img .card-intro {
     position: absolute;
@@ -54,10 +54,13 @@
 }
 .card .card-content {
     width: 100%;
-    padding: 1rem 1.5rem;
     background-color: white;
     text-align: left;
     border-top: 1px solid #f5f5f5;
+}
+.card .card-content p{
+    padding: 1rem 1.5rem;
+    white-space: normal;
 }
 .selector {
     height: 3rem;
