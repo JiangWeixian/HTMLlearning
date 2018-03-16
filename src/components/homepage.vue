@@ -170,8 +170,8 @@
               </section>
               <section class="homepage-info paper">
                   <ul>
-                      <li class="title"><p>发布的文章 </p><span>0</span></li>
-                      <li class="title"><p>维护的项目 </p><span>0</span></li>
+                      <li class="title"><p>发布的文章 </p><span>{{ articleLens }}</span></li>
+                      <li class="title"><p>维护的项目 </p><span>{{ projectLens }}</span></li>
                   </ul>
               </section>
               <section class="stack-info">
@@ -249,8 +249,10 @@
         },
         computed: {
             ...mapGetters({
-               articleLists: 'get_articlelists',
-               projectLists: 'get_projectlists' 
+                articleLists: 'get_articlelists', 
+                projectLists: 'get_projectlists',
+                articleLens: 'get_articlelens',
+                projectLens: 'get_projectlens'
             }),
             items() {
                 let renderContent = this.selectedItem == 'projects'? this.projectLists: this.articleLists;

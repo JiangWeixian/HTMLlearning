@@ -160,6 +160,9 @@ const getters = {
             return item
         })
     },
+    get_articlelens (state) {
+        return state.articleLists.length
+    },
     get_projectlists (state)  {
         return state.projectLists.map((id) => {
             let item = state.projectThreads[id]
@@ -168,6 +171,9 @@ const getters = {
             }
             return item
         })
+    },
+    get_projectlens (state) {
+        return state.projectLists.length
     },
     get_seachcontent ( state ) {
         return state.searchContent;
