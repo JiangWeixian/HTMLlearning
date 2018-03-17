@@ -8,12 +8,10 @@
         margin: 10rem;
     }
     
-    .card-title {
-        font-size: 2rem;
-    }
-    
     button {
         background-color: inherit;
+        padding-left: 0;
+        padding-right: 1rem;
         color: #0c72ee;
     }
     
@@ -74,11 +72,41 @@
         grid-template-columns: 40% auto;
         grid-auto-rows: min-content;
         width: 50%;
+        position: relative;
+    }
+    
+    .reveal-image-card .card-intro {
+        background-color: white;
+        color: black!important;
+        font-weight: normal;
+    }
+
+    .reveal-image-card .card-img{
+        grid-row: 1 / span 2;
+        grid-column: 1 / span 2;
+    }
+    .reveal-image-card .card-content{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border: none;
+        background-color: white;
+        border: 1px solid red;
+        /*display: none;*/
+        left: 0;
+        top: calc(100% - 5rem);
+    }
+    .reveal-image-card .card-action{
+        position: relative;
+        /*z-index: 99;*/
+        background-color: white;
+        grid-row: 3;
+        grid-column: 1 / span 2;
     }
 </style>
 
 <template>
-    <div id="CARD" class="paper card image-card">
+    <div id="CARD" class="paper card reveal-image-card">
         <div class="card-img">
             <img src="https://raw.githubusercontent.com/JiangWeixian/HTMLlearning/master/README/projects/projects-onepaper.jpg">
             <div class="card-intro">
@@ -87,7 +115,7 @@
             </div>
         </div>
         <div class="card-content">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus doloribus eligendi iusto? Ab adipisci architecto asperiores cupiditate deserunt est eum excepturi explicabo hic natus, nisi optio pariatur perferendis quo quos repellendus repudiandae rerum sint veniam vitae voluptate voluptatibus voluptatum. Ad, assumenda cupiditate eos error illo iste magni, perspiciatis, quam quo rerum veritatis voluptate. Animi aut debitis, deleniti, dignissimos doloribus error esse expedita in laborum molestias nobis quaerat quia quos sequi voluptatum. Adipisci aliquid beatae consequatur culpa ex in laborum nemo pariatur porro, quia quod ratione, repudiandae similique tempore vel? Ab adipisci aliquid architecto blanditiis dicta dignissimos dolore dolorem doloremque earum error et eum ex facere fuga illo illum impedit in ipsa labore, maxime necessitatibus nemo quasi quis quisquam reiciendis rem repellendus repudiandae, rerum sequi sunt suscipit tempora unde ut velit, veniam voluptates voluptatum? Consequatur delectus ducimus ea, fugit, harum ipsa maxime minima natus nisi obcaecati, repellendus tenetur voluptatibus? A, accusamus aliquid asperiores aut commodi consectetur dolore dolorem eum excepturi expedita harum impedit ipsum labore laborum magni molestias nesciunt perferendis placeat praesentium quam quasi quia quidem quo repudiandae saepe sapiente sequi tenetur, vero voluptate voluptatem. Accusamus asperiores assumenda, doloremque doloribus dolorum ducimus hic iste iusto nostrum, optio quia recusandae vel vitae.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto assumenda distinctio maiores, natus officia quas similique? Adipisci assumenda cumque debitis esse labore magni nihil quae quas qui quisquam. Quo, similique.</p>
         </div>
         <div class="card-action">
             <button>THIS IS A LINK</button>

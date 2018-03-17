@@ -47,10 +47,13 @@ i.lh-36 {
 }
 .card .card-img .card-intro {
     position: absolute;
-    left: 1.5rem;
+    width: 100%;
+    padding: 1rem 1.5rem;
+    box-sizing: border-box;
+    left: 0;
     bottom: 0;
     font-family: 'Raleway', sans-serif;
-    /*font-size: 2rem;*/
+    font-size: 2rem;
     font-weight: bolder;
     color: white;
     text-align: left;
@@ -59,7 +62,6 @@ i.lh-36 {
 .card .card-img .card-intro .card-time {
     font-family: 'Noto Sans', sans-serif;
     font-size: 1rem;
-    padding-bottom: 1rem;
 }
 .card .card-content {
     width: 100%;
