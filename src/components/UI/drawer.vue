@@ -15,7 +15,7 @@
             <div class="order title clearfix" @click="dropUp()">
                 <p class="title-icon pull-left"><i class="material-icons lh-36">{{ iconName }}</i></p>
                 <p class="title-name lh-36 pull-left">{{ titleName }}</p>
-                <p class="title-switch pull-right"><i class="material-icons lh-36">more_horiz</i></p>
+                <p class="title-switch pull-right"><i class="material-icons lh-36">more_vert</i></p>
             </div>
             <div class="drawer-container-wrapper" ref="containerWrapper">
                 <slot></slot>
