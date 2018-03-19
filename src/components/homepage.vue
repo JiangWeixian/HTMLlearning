@@ -24,7 +24,7 @@
         width: 29%;
     }
     .personal-info {
-        margin-top: 1rem;
+        margin-top: 12px;
     }
     .personal-info .personal-bg img {
         width: 100%;
@@ -33,24 +33,24 @@
     .personal-info .personal-content {
         text-align: left;
         position: relative;
-        padding-bottom: 1rem;
+        padding-bottom: 12px;
     }
     .personal-info .personal-content img {
         position: absolute;
-        left: 2rem;
-        top: -5rem;
-        width: 8rem;
-        height: 8rem;
-        border-radius: 5rem;
+        left: 24px;
+        top: -60px;
+        width: 84px;
+        height: 84px;
+        border-radius: 60px;
         border: 3px solid white;
         object-fit: cover;
     }
     .personal-info .personal-content > * {
-        text-indent: 3rem;
+        text-indent: 36px;
         font-family: 'Noto Sans', sans-serif;
     }
     .personal-info .personal-content h1 {
-        padding-top: 5rem;
+        padding-top: 60px;
     }
     .homepage-info {
         font-family: 'Noto Sans', sans-serif;
@@ -62,12 +62,12 @@
     .homepage-info li p, .homepage-info li span {
         width: 47%;
         display: inline-block;
-        line-height: 3rem;
-        font-size: 1.5rem;
+        line-height: 36px;
+        font-size: 14px;
     }
     .homepage-info li p {
         text-align: left;
-        text-indent: 1rem;
+        text-indent: 12px;
     }
     .homepage-info li span {
         text-align: right;
@@ -90,17 +90,38 @@
         }
     }
 
-    @media screen and (max-width: 940px){
+    @media screen and (max-width: 750px){
         ::-webkit-scrollbar {
             width: 0px;
         }
         .page-container {
-            height: calc(100vh - 14.5rem);
+            height: calc(100vh - 174px);
+        }
+        .home-main {
+            width: 95%;
+        }
+        .mutiltype-lister .selector {
+            width: 100%;
+            height: 18px;
+            line-height: 48px;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            z-index: 101;
+            margin: 0!important;
+        }
+        .mutiltype-lister .selector .selected-name {
+            width: 49%;
+            margin: 0;
+            height: calc(48px - 3px);
+        }
+        .mutiltype-lister .container li:last-child {
+            margin-bottom: 48px;
         }
         .home-main .personal-siderbar {
             display: block;
             position: fixed;
-            width: 40%;
+            width: 70%;
             height: 100vh;
             background-color: white;
             overflow: auto;
@@ -124,32 +145,32 @@
             width: 100%;
         }
     }
-    @media screen and (max-width: 425px) {
-        .home-main {
-            width: 95%;
-        }
-        .home-main .personal-siderbar {
-            width: 70%;
-        }
-        .mutiltype-lister .selector {
-            width: 100%;
-            height: 4rem;
-            line-height: 4rem;
-            position: fixed;
-            left: 0;
-            bottom: 0;
-            z-index: 101;
-            margin: 0!important;
-        }
-        .mutiltype-lister .selector .selected-name {
-            width: 49%;
-            margin: 0;
-            height: calc(4rem - 3px);
-        }
-        .mutiltype-lister .container li:last-child {
-            margin-bottom: 4rem;
-        }
-    }
+    /*@media screen and (max-width: 425px) {*/
+        /*.home-main {*/
+            /*width: 95%;*/
+        /*}*/
+        /*.home-main .personal-siderbar {*/
+            /*width: 70%;*/
+        /*}*/
+        /*.mutiltype-lister .selector {*/
+            /*width: 100%;*/
+            /*height: 18px;*/
+            /*line-height: 48px;*/
+            /*position: fixed;*/
+            /*left: 0;*/
+            /*bottom: 0;*/
+            /*z-index: 101;*/
+            /*margin: 0!important;*/
+        /*}*/
+        /*.mutiltype-lister .selector .selected-name {*/
+            /*width: 49%;*/
+            /*margin: 0;*/
+            /*height: calc(48px - 3px);*/
+        /*}*/
+        /*.mutiltype-lister .container li:last-child {*/
+            /*margin-bottom: 48px;*/
+        /*}*/
+    /*}*/
 </style>
 
 <template>

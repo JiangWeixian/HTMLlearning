@@ -6,18 +6,18 @@
     .searcher input {
         width: 100%;
         background-color: #f5f5f5;
-        text-indent: 1rem;
+        text-indent: 12px;
         font-family: 'Noto Sans', sans-serif;
-        font-size: 1.5rem;
-        line-height: 3rem;
+        font-size: 14px;
+        line-height: inherit;
     }
     .searcher .search-icon {
         position: absolute;
         right: 0;
         top: 0;
-        width: 3rem;
-        height: 3rem;
-        line-height: 3rem;
+        width: 36px;
+        height: 36px;
+        line-height: inherit;
         background-color: #f5f5f5;
         cursor: pointer;
     }
@@ -43,6 +43,20 @@
             return {
                 searchContent: '',
                 inputStatus: false
+            }
+        },
+        computed: {
+            isPc() {
+                var ua = navigator.userAgent,
+                    isWindowsPhone = /(?:Windows Phone)/.test(ua),
+                    isSymbian = /(?:SymbianOS)/.test(ua) || isWindowsPhone,
+                    isAndroid = /(?:Android)/.test(ua),
+                    isFireFox = /(?:Firefox)/.test(ua),
+                    isChrome = /(?:Chrome|CriOS)/.test(ua),
+                    isTablet = /(?:iPad|PlayBook)/.test(ua) || (isAndroid && !/(?:Mobile)/.test(ua)) || (isFireFox && /(?:Tablet)/.test(ua)),
+                    isPhone = /(?:iPhone)/.test(ua) && !isTablet,
+                    isPc = !isPhone && !isAndroid && !isSymbian;
+                return isPc
             }
         },
         methods: {

@@ -68,34 +68,34 @@
     position: relative;
   }
   .city-name {
-    width: 45rem;
-    border: 1rem white solid;
+    width: 540px;
+    border: 12px white solid;
     position: absolute;
-    padding: 0.5rem 2rem;
+    padding: 6px 24px;
     top: 50%;
     left: 50%;
-    margin-top: -10rem;
-    margin-left: -22.5rem;
+    margin-top: -120px;
+    margin-left: -270px;
     z-index: 1;
     overflow: hidden;
     box-sizing: border-box;
   }
   .city-name span {
     color: white;
-    font-size: 8rem;
+    font-size: 80px;
     font-weight: bolder;
   }
   .city-name::after {
     content: '';
-    width: 60rem;
-    height: 30rem;
+    width: 720px;
+    height: 360px;
     background-image: url("https://raw.githubusercontent.com/JiangWeixian/HTMLlearning/master/README/projects/onepaper/cityinfo-bg.jpg");
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
     position: absolute;
-    top: -1rem;
-    left: -1rem;
+    top: -12px;
+    left: -12px;
     z-index: -1;
     -webkit-filter: blur(15px);
     -moz-filter: blur(15px);
@@ -106,11 +106,11 @@
   .city-bg .material-icons {
     cursor: pointer;
     color: white;
-    font-size: 4rem;
+    font-size: 40px;
     position: absolute;
     left: 50%;
     top: 90vh;
-    margin-left: -2rem;
+    margin-left: -24px;
     animation: float 2s ease-in-out infinite;
   }
   @keyframes float {
@@ -127,8 +127,8 @@
   .city-info {
     width: 98%;
     background-color: white;
-    padding-top: 6rem;
-    padding-bottom: 6rem;
+    padding-top: 72px;
+    padding-bottom: 72px;
     margin: 0 auto;
     margin-top: 100vh;
     border-radius: 10px;
@@ -138,7 +138,7 @@
   .city-info ul li{
     display: inline-block;
     color: #ccc;
-    font-size: 4rem;
+    font-size: 40px;
     font-weight: lighter;
     position: relative;
     width: 33.3%;

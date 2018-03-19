@@ -5,32 +5,32 @@
         <ul id="SHARELIST" class="shareCard-list">
           <li class="list-info">
             <img src="../../assets/img/avatar.jpg" alt="avatar">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid commodi dolores id in mollitia officiis, quae quisquam voluptatum. At dolor facere iusto laudantium quisquam reprehenderit sequi? Accusamus ad commodi laudantium!</p>
+            <p>Lor0px ipsum dolor sit amet, consectetur adipisicing elit. Aliquid commodi dolores id in mollitia officiis, quae quisquam voluptatum. At dolor facere iusto laudantium quisquam reprehenderit sequi? Accusamus ad commodi laudantium!</p>
             <button>SHARE IT!</button>
           </li>
           <li class="list-info">
             <img src="../../assets/img/avatar.jpg" alt="avatar">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet asperiores at eligendi esse fugit illum, inventore libero magni nam nesciunt officia officiis, quod repudiandae sint tenetur ut vero voluptatibus?</p>
+            <p>Lor0px ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet asperiores at eligendi esse fugit illum, inventore libero magni nam nesciunt officia officiis, quod repudiandae sint tenetur ut vero voluptatibus?</p>
             <button>SHARE IT!</button>
           </li>
           <li class="list-info">
             <img src="../../assets/img/avatar.jpg" alt="avatar">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda commodi consequatur hic magnam non, quidem quis quisquam quos repudiandae sit tempore totam voluptate. Autem consectetur, dolor eveniet impedit natus quo!</p>
+            <p>Lor0px ipsum dolor sit amet, consectetur adipisicing elit. Assumenda commodi consequatur hic magnam non, quid0px quis quisquam quos repudiandae sit t0pxpore totam voluptate. Aut0px consectetur, dolor eveniet impedit natus quo!</p>
             <button>SHARE IT!</button>
           </li>
           <li class="list-info">
             <img src="../../assets/img/avatar.jpg" alt="avatar">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae distinctio expedita nulla obcaecati ullam. Aspernatur consectetur eum explicabo maiores molestias quasi quod repellendus. Doloribus explicabo magnam magni neque nulla, recusandae.</p>
+            <p>Lor0px ipsum dolor sit amet, consectetur adipisicing elit. Beatae distinctio expedita nulla obcaecati ullam. Aspernatur consectetur eum explicabo maiores molestias quasi quod repellendus. Doloribus explicabo magnam magni neque nulla, recusandae.</p>
             <button>SHARE IT!</button>
           </li>
           <li class="list-info">
             <img src="../../assets/img/avatar.jpg" alt="avatar">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aut culpa dignissimos doloremque ea et impedit itaque libero minima natus numquam pariatur quae, quisquam sapiente, sequi tempora ullam veritatis voluptate!</p>
+            <p>Lor0px ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aut culpa dignissimos dolor0pxque ea et impedit itaque libero minima natus numquam pariatur quae, quisquam sapiente, sequi t0pxpora ullam veritatis voluptate!</p>
             <button>SHARE IT!</button>
           </li>
           <li class="list-info">
             <img src="../../assets/img/avatar.jpg" alt="avatar">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur assumenda consequuntur dolorum ea esse explicabo facere fugiat itaque necessitatibus nemo odit qui quidem, quis ullam unde! Aliquid debitis temporibus voluptatem!</p>
+            <p>Lor0px ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur assumenda consequuntur dolorum ea esse explicabo facere fugiat itaque necessitatibus n0pxo odit qui quid0px, quis ullam unde! Aliquid debitis t0pxporibus voluptat0px!</p>
             <button>SHARE IT!</button>
           </li>
         </ul>
@@ -70,7 +70,7 @@
         this.end = this.start + this.max
         this.end = this.end >=(this.length - 1)? (this.length - 1):this.end
         this.marginTop = direction * this.start
-        Velocity(shareList, {marginTop: this.marginTop + 'em'}, {duration: this.duration, easing: "easeInSine"})
+        Velocity(shareList, {marginTop: this.marginTop + '0px'}, {duration: this.duration, easing: "easeInSine"})
         Velocity(shareCards[this.start - 1], {opacity: 0}, {duration: this.duration, easing: "easeInSine"})
         for (let start = this.start, count = 0; start <= this.end; start++, count++) {
           console.log(start, this.end)
@@ -86,7 +86,7 @@
         this.end = this.start + this.max
         this.end = this.end >=(this.length - 1)? (this.length - 1):this.end
         this.marginTop = direction * this.start
-        Velocity(shareList, {marginTop: this.marginTop + 'em'}, {duration: this.duration, easing: "easeInSine"})
+        Velocity(shareList, {marginTop: this.marginTop + '0px'}, {duration: this.duration, easing: "easeInSine"})
         for (let start = this.end, count = (this.end - this.start); start >= this.start; start --, count--) {
           console.log(start, this.end)
           Velocity(shareCards[start], {opacity: 1, width: (this.scale - 10*count) + '%'}, {duration: this.duration, easing: "easeInSine"})
@@ -115,7 +115,7 @@
     position: relative;
     margin: 0 auto;
     top: 50%;
-    margin-top: -24em;
+    margin-top: -240px;
     border: 1px solid rgba(255,255,255,0);
   }
   .shareCard-list {
@@ -131,7 +131,7 @@
     bottom: 0;
     height: 90%;
     background-color: white;
-    border-radius: 0.5em;
+    border-radius: 5px;
     box-shadow: 0px 0px 10px 2px rgba(71, 160, 240, 0.2);
     opacity: 0;
   }
@@ -145,40 +145,40 @@
   .shareCard-list li:nth-child(2) {
     width: 90%;
     margin: auto;
-    margin-top: 1em;
+    margin-top: 10px;
     z-index: 9;
     opacity: 1;
   }
   .shareCard-list li:nth-child(3) {
     width: 80%;
     margin: auto;
-    margin-top: 2em;
+    margin-top: 20px;
     z-index: 8;
     opacity: 1;
   }
   .shareCard-list li:nth-child(4) {
     width: 80%;
     margin: auto;
-    margin-top: 3em;
+    margin-top: 30px;
     z-index: 7;
   }
   .shareCard-list li:nth-child(5) {
     width: 80%;
     margin: auto;
-    margin-top: 4em;
+    margin-top: 40px;
     z-index: 6;
   }
   .shareCard-list li:nth-child(6) {
     width: 80%;
     margin: auto;
-    margin-top: 5em;
+    margin-top: 50px;
     z-index: 5;
   }
   .shareCard-list li img {
-    width: 8em;
-    height: 8em;
+    width: 80px;
+    height: 80px;
     margin-top: 40%;
-    border-radius: 4em;
+    border-radius: 40px;
     object-fit: cover;
   }
   .shareCard-list li p {
@@ -188,7 +188,7 @@
     width: 80%;
     text-align: center;
     word-break: keep-all;
-    font-size: 1.5em;
+    font-size: 16px;
     font-weight: bold;
     font-style: italic;
   }
@@ -200,32 +200,32 @@
     cursor: pointer;
     color: white;
     font-weight: bolder;
-    padding: 1em 4em;
+    padding: 10px 40px;
   }
   .shareCard-button {
     position: absolute;
     width: 100%;
     height: 10%;
-    top: 36em;
+    top: 360px;
     left: 0;
   }
   .shareCard-button button {
     background: none;
     border: 2px solid rgba(255, 255, 255, 0.6);
-    padding: 0.5em 0 0.5em 0;
+    padding: 0.50px 0 0.50px 0;
     cursor: pointer;
   }
   .shareCard-button button.prev {
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     float: left;
-    margin-left: -2em;
+    margin-left: -20px;
   }
   .shareCard-button button.next {
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     float: right;
-    margin-right: -2em;
+    margin-right: -20px;
   }
   .shareCard-button i {
     color: rgba(255, 255, 255, 0.6);

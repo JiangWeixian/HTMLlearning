@@ -33,26 +33,26 @@
         background: url("https://raw.githubusercontent.com/JiangWeixian/HTMLlearning/master/README/projects/onepaper/begin-with-dogs-bg.jpg");
         background-size: cover;
         background-position-y: center;
-        background-position-x: 5rem;
+        background-position-x: 60px;
     }
     .dogs-content {
         text-align: left;
-        width: 50rem;
+        width: 600px;
         left: 50%;
-        margin-left: -25rem;
-        top: 48rem;
+        margin-left: -300px;
+        top: 576px;
         z-index: 999;
     }
     .dogs-content, p.content-title {
         font-family: 'Roboto', sans-serif;
-        font-size: 2rem;
+        font-size: 20px;
         font-weight: lighter;
         position: relative;
     }
     .dogs-content .content-title::after {
         content: ' ';
         display: block;
-        width: 5.5rem;
+        width: 66px;
         height: 1px;
         position: absolute;
         top: 100%;
@@ -60,7 +60,7 @@
         background-color: black;
     }
     .dogs-content .content-words {
-        font-size: 10rem;
+        font-size: 100px;
         font-weight: bolder;
         font-family: 'Noto Sans', sans-serif;
         position: relative;
@@ -70,13 +70,13 @@
     }
     @keyframes belong {
         from {width: 0px}
-        to {width: 50rem}
+        to {width: 600px}
     }
     .dogs-content .content-words::after {
         content: ' ';
         display: block;
-        width: 50rem;
-        height: 2.5rem;
+        width: 600px;
+        height: 30px;
         position: absolute;
         z-index: -1;
         top: 65%;

@@ -8,11 +8,11 @@
         text-align: left;
         font-family: 'Roboto Mono', monospace;
         font-weight: bolder;
-        font-size: 1.5rem;
-        line-height: 1.5rem;
+        font-size: 16px;
+        line-height: 16px;
         position: relative;
         color: #ccc;
-        margin-top: 1rem;
+        margin-top: 12px;
     }
     .neo-time::before {
         content: ' ';
@@ -28,13 +28,13 @@
     .neo-time .tag-bug {
         color: white;
         background-color: red;
-        font-size: 1rem;
-        line-height: 1rem;
+        font-size: 10px;
+        line-height: 12px;
         font-weight: normal;
-        padding: 0.2rem;
+        padding: 2px;
     }
     .neo-item .card-title {
-        font-size: 2rem;
+        font-size: 24px;
     }
 
     @media screen and (max-width: 1440px) {
@@ -42,7 +42,7 @@
             width: 60%;
         }
     }
-    
+
     @media screen and (max-width: 768px) {
         .neo-item {
             width: 70%;

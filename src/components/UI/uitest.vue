@@ -118,13 +118,18 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto assumenda distinctio maiores, natus officia quas similique? Adipisci assumenda cumque debitis esse labore magni nihil quae quas qui quisquam. Quo, similique.</p>
         </div>
         <div class="card-action">
-            <button>THIS IS A LINK</button>
+            <button @click="test">THIS IS A LINK</button>
         </div>
     </div>
 </template>
 
 <script>
     export default {
-        name: "uitest"
+        name: "uitest",
+        methods: {
+            test() {
+                alert(lib.flexible.rem)
+            }
+        }
     }
 </script>

@@ -7,8 +7,8 @@
     }
     header {
         width: 100%;
-        padding: 0.7rem 0 0.5rem 0;
-        margin-bottom: 10rem;
+        padding: 0 0 6px 0;
+        margin-bottom: 120px;
         background-color: white;
         box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
         position: fixed;
@@ -20,7 +20,7 @@
         width: 65%;
         margin: 0 auto;
     }
-    header nav .router-name, .homepage-icon {
+    header nav .router-name, header nav .homepage-icon {
         display: inline-block;
         vertical-align: middle;
     }
@@ -28,16 +28,19 @@
         font-family: 'Raleway', sans-serif;
         font-weight: bold;
         color: #ccc;
-        text-indent: 1rem;
+        text-indent: 12px;
     }
     header nav .router-name:hover {
         color: #0c72ee;
     }
     header nav .homepage-icon img{
-        width: 3rem;
-        height: 3rem;
+        width: 37px;
+        height: 37px;
         object-fit: cover;
-        border-radius: 3rem;
+        border-radius: 100px;
+    }
+    .global-searcher {
+        line-height: 36px;
     }
     footer {
         display: flex;
@@ -53,27 +56,27 @@
     footer .main {
         width: 65%;
         margin: 0 auto;
-        padding: 2rem 0;
+        padding: 24px 0;
         text-align: left;
-        text-indent: 0.5rem;
+        text-indent: 6px;
     }
     footer .author {
-        font-size: 2rem;
+        font-size: 20px;
         font-weight: bolder;
     }
     footer .copyright {
-        padding-top: 0.5rem;
-        font-size: 1rem;
+        padding-top: 6px;
+        font-size: 12px;
     }
     footer .linkme {
-        margin: 1.5rem 0 0 0;
+        margin: 18px 0 0 0;
     }
     footer .linkme ul {
         list-style: none;
     }
     footer .linkme ul li img {
-        width: 2rem;
-        height: 2rem;
+        width: 24px;
+        height: 24px;
     }
 
     @media screen and (max-width: 1280px){
@@ -94,19 +97,38 @@
         }
     }
 
-    @media screen and (max-width: 425px){
+    @media screen and (max-width: 750px){
+        header {
+            margin-bottom: 0;
+        }
         header .main {
             width: 95%;
+        }
+        header .main .homepage-icon img {
+            width: 72px;
+            height: 72px;
+            object-fit: cover;
+            border-radius: 100px;
         }
         header .main .router-name {
             display: none;
         }
         .searcher-wrapper {
-            width: 88%;
+            width: 80%;
+        }
+        .global-searcher {
+            line-height: 72px;
         }
         footer {
             display: none;
         }
+    }
+
+    @media screen and (max-width: 375px){
+        header {
+            background-color: red;
+        }
+
     }
 
     @media screen and (max-width: 320px){
@@ -129,7 +151,7 @@
                   </nav>
               </div>
               <div class="pull-right searcher-wrapper">
-                  <searcher @search="search"></searcher>
+                  <searcher class="global-searcher" @search="search" :lh="75"></searcher>
               </div>
           </div>
       </header>

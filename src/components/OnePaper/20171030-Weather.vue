@@ -12,7 +12,7 @@
       </li>
     </ul>
     <div class="weather-info">
-      <div class="weather-today">
+      <div class="weather-today pull-left">
         <p class="title">Most Sunny</p>
         <p><span>Wind:</span>N 5 mph</p>
         <p><span>Humidity:</span>45%</p>
@@ -116,9 +116,9 @@
   }
   .weather-head li {
     display: inline-block;
-    padding: 1em 2em;
+    padding: 12px 24px;
     color: white;
-    font-size: 3em;
+    font-size: 36px;
     font-weight: bold;
   }
   .weather-head .weather-data {
@@ -132,14 +132,14 @@
     text-align: right;
   }
   .weather-c .forecast {
-    font-size: 4em;
+    font-size: 124px;
     font-weight: bolder;
   }
   .weather-c .forecast::after {
     content: 'o';
     position: relative;
     top: -80px;
-    font-size: 0.2em;
+    font-size: 7.2px;
     font-weight: normal;
   }
   .weather-data .month::after {
@@ -156,7 +156,7 @@
   }
   .weather-data .day {
     font-weight: bolder;
-    font-size: 2em;
+    font-size: 72px;
   }
   .weather-info {
     background-color: rgba(0, 0, 0, 0.5);
@@ -165,24 +165,26 @@
     position: relative;
     top: -200px;
     font-size: 0px;
-    padding-top: 1.5rem;
+    
   }
   .weather-today, .weather-week {
     display: inline-block;
   }
   .weather-info .weather-today {
-    font-size: 1rem;
-    padding-left: 1rem;
+    font-size: 12px;
+    padding-left: 24px;
+      padding-top: 36px;  
   }
   .weather-info .weather-today p{
     text-align: left;
-    font-size: 3em;
+    font-size: 32px;
+    line-height: 48px; 
     color: #AB9781;
   }
   .weather-today p.title{
     color: white;
     font-weight: bold;
-    font-size: 4em;
+    font-size: 32px;
   }
   .weather-info .weather-week {
     width: 80%;
@@ -193,7 +195,7 @@
   }
   .weather-week li {
     display: inline-block;
-    font-size: 3.5rem;
+    font-size: 42px;
     width: 20%;
   }
   .weather-week li p {
@@ -206,7 +208,7 @@
     content: 'o';
     position: relative;
     top: -20px;
-    font-size: 0.2em;
+    font-size: 7.2px;
     font-weight: bold;
   }
 </style>

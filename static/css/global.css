@@ -20,15 +20,15 @@ i.lh-36 {
 
 .paper {
     background-color: white;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-top: 12px;
+    margin-bottom: 12px;
     box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.1);
 }
 
 .page-container {
-    padding-top: 5rem;
-    padding-bottom: 1rem;
-    min-height: calc(100vh - 14.5rem);
+    padding-top: 60px;
+    padding-bottom: 12px;
+    min-height: calc(100vh - 174px);
 }
 
 .card {
@@ -48,12 +48,12 @@ i.lh-36 {
 .card .card-img .card-intro {
     position: absolute;
     width: 100%;
-    padding: 1rem 1.5rem;
+    padding: 12px 18px;
     box-sizing: border-box;
     left: 0;
     bottom: 0;
     font-family: 'Raleway', sans-serif;
-    font-size: 2rem;
+    font-size: 20px;
     font-weight: bolder;
     color: white;
     text-align: left;
@@ -61,12 +61,12 @@ i.lh-36 {
 
 .card .card-img .card-intro .card-time {
     font-family: 'Noto Sans', sans-serif;
-    font-size: 1rem;
+    font-size: 10px;
 }
 .card .card-content {
     width: 100%;
     box-sizing: border-box;
-    padding: 1rem 1.5rem;
+    padding: 12px 18px;
     background-color: white;
     text-align: left;
     border-top: 1px solid #f5f5f5;
@@ -75,25 +75,26 @@ i.lh-36 {
     white-space: normal;
 }
 .card .card-action {
-    padding: 1rem 1.5rem;
+    padding: 12px 18px;
     border-top: 1px solid #f5f5f5;
     text-align: left;
 }
 
 
 .selector {
-    height: 3rem;
-    line-height: 3rem;
+    height: 36px;
+    line-height: 36px;
     font-family: 'Noto Sans', sans-serif;
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 14px;
 }
 .selector a.selected-name {
     color: #ccc;
-    margin: 0 1rem;
+    text-decoration: none;
+    margin: 0 12px;
     display: inline-block;
     vertical-align: top;
-    height: calc(3rem - 3px);
+    height: calc(36px - 3px);
 }
 .selector a.selected-name:hover,
 .selector a.active {
@@ -103,7 +104,7 @@ i.lh-36 {
 .title {
     width: 100%;
     cursor: pointer;
-    height: 3rem;
+    height: 36px;
     overflow: hidden;
 }
 .title:hover {
@@ -121,33 +122,33 @@ i.lh-36 {
 }
 .drawer .title .title-icon {
     text-align: left;
-    text-indent: 0.5rem;
+    text-indent: 6px;
 }
 .drawer .title .title-name{
     text-align: left;
     font-family: 'Noto Sans', sans-serif;
-    font-size: 1.4rem;
-    text-indent: 0.5rem;
+    font-size: 14px;
+    text-indent: 6px;
 }
 .drawer .title .title-switch {
     text-align: right;
-    padding-right: 1rem;
+    padding-right: 12px;
 }
 .drawer .drawer-container-wrapper {
     overflow: hidden;
 }
 .drawer .drawer-container{
-    padding: 1rem 0 1rem 0;
+    padding: 12px 0;
     background-color: #f5f5f5;
 }
 .drawer ul.drawer-container li {
     display: inline-block;
-    height: 3rem;
+    height: 36px;
     overflow: hidden;
 }
 .drawer-hander {
     background-color: white;
     box-shadow: 0px -1px 10px 0px rgba(0, 0, 0, 0.1);
-    height: 1.5rem;
+    height: 18px;
     cursor: pointer;
 }

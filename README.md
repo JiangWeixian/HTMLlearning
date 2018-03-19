@@ -20,5 +20,7 @@ This Repositories online redirected to [JiangWeixian's blog](https://jiangweixia
 
 ## TODO
 
+* [x] - 使用flexible修改页面 - 不知道为啥，html的font-size是54px。感觉是个大工程。
+    * [ ] - 大致修改完毕，不知道手机上怎么样
 * [ ] - card.vue(use grid)
 * [ ] - 轮播器
