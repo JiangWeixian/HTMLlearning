@@ -39,18 +39,19 @@
     .article {
         position: relative;
         background-color: #f5f5f5;
-        padding: 4.5rem 0 2rem 0;
+        padding: 60px 0 48px 0;
     }
     .article-content {
-        width: 65%;
+        width: 60%;
         box-sizing: border-box;
-        padding: 1rem 2rem;
-        margin-top: -19rem;
+        padding: 24px 48px;
+        margin: 0 auto;
+        margin-top: -300px;
     }
     .article-bg {
         background-color: white;
         width: 100%;
-        height: 20rem;
+        height: 400px;
     }
     
     @media screen and (max-width: 1024px) {
@@ -58,13 +59,7 @@
             width: 80%;
         }
     }
-    @media screen and (max-width: 768px) {
-        .article-content {
-            width: 85%;
-        }
-    }
-
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 750px) {
         .article-content {
             width: 95%;
         }

@@ -102,6 +102,7 @@
     overflow: hidden;
     width: 100vw;
     height: 100vh;
+    position: relative;  
   }
   .weather-bg {
     width: 100%;
@@ -116,9 +117,9 @@
   }
   .weather-head li {
     display: inline-block;
-    padding: 12px 24px;
+    padding: 24px 48px;
     color: white;
-    font-size: 36px;
+    font-size: 72px;
     font-weight: bold;
   }
   .weather-head .weather-data {
@@ -132,38 +133,38 @@
     text-align: right;
   }
   .weather-c .forecast {
-    font-size: 124px;
+    font-size: 220px;
     font-weight: bolder;
   }
   .weather-c .forecast::after {
     content: 'o';
     position: relative;
-    top: -80px;
-    font-size: 7.2px;
+    top: -160px;
+    font-size: 36px;
     font-weight: normal;
   }
   .weather-data .month::after {
-    content: '1';
+    content: ' ';
     display: block;
     font-size: 0px;
     font-weight: 0px;
     position: relative;
-    top: 5px;
-    left: 8px;
-    width: 20px;
-    height: 5px;
+    top: 10px;
+    left: 20px;
+    width: 40px;
+    height: 10px;
     background-color: white;
   }
-  .weather-data .day {
+  .weather-data p.day {
     font-weight: bolder;
-    font-size: 72px;
+    font-size: 132px;
   }
   .weather-info {
     background-color: rgba(0, 0, 0, 0.5);
     width: 100%;
-    height: 200px;
-    position: relative;
-    top: -200px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
     font-size: 0px;
     
   }
@@ -171,20 +172,20 @@
     display: inline-block;
   }
   .weather-info .weather-today {
-    font-size: 12px;
-    padding-left: 24px;
-      padding-top: 36px;  
+    font-size: 48px;
+    line-height: 72px;
+    height: 72px;  
+    padding-left: 96px;
+    padding-top: 48px;  
   }
   .weather-info .weather-today p{
     text-align: left;
-    font-size: 32px;
-    line-height: 48px; 
     color: #AB9781;
   }
   .weather-today p.title{
+    font-size: 48px;  
     color: white;
     font-weight: bold;
-    font-size: 32px;
   }
   .weather-info .weather-week {
     width: 80%;
@@ -195,7 +196,7 @@
   }
   .weather-week li {
     display: inline-block;
-    font-size: 42px;
+    font-size: 72px;
     width: 20%;
   }
   .weather-week li p {
@@ -208,7 +209,7 @@
     content: 'o';
     position: relative;
     top: -20px;
-    font-size: 7.2px;
+    font-size: 14px;
     font-weight: bold;
   }
 </style>

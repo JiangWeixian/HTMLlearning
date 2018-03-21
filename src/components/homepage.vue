@@ -22,6 +22,7 @@
     }
     .personal-siderbar {
         width: 29%;
+        margin-top: 12px;
     }
     .personal-info {
         margin-top: 12px;
@@ -33,24 +34,26 @@
     .personal-info .personal-content {
         text-align: left;
         position: relative;
+        font-size: 28px;
         padding-bottom: 12px;
     }
     .personal-info .personal-content img {
         position: absolute;
         left: 24px;
-        top: -60px;
-        width: 84px;
-        height: 84px;
-        border-radius: 60px;
-        border: 3px solid white;
+        top: -120px;
+        width: 180px;
+        height: 180px;
+        border-radius: 200px;
+        border: 6px solid white;
         object-fit: cover;
     }
     .personal-info .personal-content > * {
-        text-indent: 36px;
+        text-indent: 28px;
         font-family: 'Noto Sans', sans-serif;
     }
     .personal-info .personal-content h1 {
-        padding-top: 60px;
+        padding-top: 100px;
+        font-size: 36px;
     }
     .homepage-info {
         font-family: 'Noto Sans', sans-serif;
@@ -58,19 +61,6 @@
     }
     .homepage-info li:hover {
         background-color: #f5f5f5;
-    }
-    .homepage-info li p, .homepage-info li span {
-        width: 47%;
-        display: inline-block;
-        line-height: 36px;
-        font-size: 14px;
-    }
-    .homepage-info li p {
-        text-align: left;
-        text-indent: 12px;
-    }
-    .homepage-info li span {
-        text-align: right;
     }
 
 
@@ -100,26 +90,9 @@
         .home-main {
             width: 95%;
         }
-        .mutiltype-lister .selector {
-            width: 100%;
-            height: 18px;
-            line-height: 48px;
-            position: fixed;
-            left: 0;
-            bottom: 0;
-            z-index: 101;
-            margin: 0!important;
-        }
-        .mutiltype-lister .selector .selected-name {
-            width: 49%;
-            margin: 0;
-            height: calc(48px - 3px);
-        }
-        .mutiltype-lister .container li:last-child {
-            margin-bottom: 48px;
-        }
         .home-main .personal-siderbar {
             display: block;
+            margin: 0;
             position: fixed;
             width: 70%;
             height: 100vh;
@@ -144,33 +117,27 @@
         .home-main .blog-content {
             width: 100%;
         }
+        .homepage-info {
+            font-family: 'Noto Sans', sans-serif;
+            text-align: justify;
+        }
+        .mutiltype-lister .selector {
+            width: 100%;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            z-index: 101;
+            margin: 0!important;
+        }
+        .mutiltype-lister .selector .selected-name {
+            width: 49%;
+            margin: 0;
+        }
+        .mutiltype-lister .container li:last-child {
+            margin-bottom: 100px;
+        }
     }
-    /*@media screen and (max-width: 425px) {*/
-        /*.home-main {*/
-            /*width: 95%;*/
-        /*}*/
-        /*.home-main .personal-siderbar {*/
-            /*width: 70%;*/
-        /*}*/
-        /*.mutiltype-lister .selector {*/
-            /*width: 100%;*/
-            /*height: 18px;*/
-            /*line-height: 48px;*/
-            /*position: fixed;*/
-            /*left: 0;*/
-            /*bottom: 0;*/
-            /*z-index: 101;*/
-            /*margin: 0!important;*/
-        /*}*/
-        /*.mutiltype-lister .selector .selected-name {*/
-            /*width: 49%;*/
-            /*margin: 0;*/
-            /*height: calc(48px - 3px);*/
-        /*}*/
-        /*.mutiltype-lister .container li:last-child {*/
-            /*margin-bottom: 48px;*/
-        /*}*/
-    /*}*/
+
 </style>
 
 <template>
@@ -198,25 +165,27 @@
               <section class="stack-info">
                   <drawer icon-name="web" title-name="前端技术栈">
                       <ul class="drawer-container">
-                          <li><svg xmlns='http://www.w3.org/2000/svg' width='146' height='47'><foreignObject width='100%' height='100%'><div xmlns='http://www.w3.org/1999/xhtml' style='font-family: Raleway; font-size: 0px; color: white; text-transform: uppercase; padding: 0px'><p class="header" style="display: inline-block; padding: 0.6rem 1rem; font-size: 12px; letter-spacing: 3px; background-color: rgb(159, 168, 218);">skill</p> <p class="tail" style="display: inline-block; padding: 0.6rem 1rem; font-weight: 700; font-size: 12px; letter-spacing: 3px; background-color: rgb(63, 81, 181);">css</p></div></foreignObject></svg></li>
                           <li>
-                              <svg xmlns='http://www.w3.org/2000/svg' width='161' height='47'><foreignObject width='100%' height='100%'><div xmlns='http://www.w3.org/1999/xhtml' style='font-family: Raleway; font-size: 0px; color: white; text-transform: uppercase; padding: 0px'><p class="header" style="display: inline-block; padding: 0.6rem 1rem; font-size: 12px; letter-spacing: 3px; background-color: rgb(120, 144, 156);"> SKILL</p> <p class="tail" style="display: inline-block; padding: 0.6rem 1rem; font-weight: 700; font-size: 12px; letter-spacing: 3px; background-color: rgb(96, 125, 139);">html</p></div></foreignObject></svg></li>
-                          <li>
-
-                              <svg xmlns='http://www.w3.org/2000/svg' width='215' height='47'><foreignObject width='100%' height='100%'><div xmlns='http://www.w3.org/1999/xhtml' style='font-family: Raleway; font-size: 0px; color: white; text-transform: uppercase; padding: 0px'><p class="header" style="display: inline-block; padding: 0.6rem 1rem; font-size: 12px; letter-spacing: 3px; background-color: rgb(197, 202, 233);"> SKILL</p> <p class="tail" style="display: inline-block; padding: 0.6rem 1rem; font-weight: 700; font-size: 12px; letter-spacing: 3px; background-color: rgb(63, 81, 181);"> javascript</p></div></foreignObject></svg>
+                              <svg xmlns="http://www.w3.org/2000/svg" width="4.053333333333334rem" height="1.3866666666666667rem"><foreignObject width="100%" height="100%"><div xmlns="http://www.w3.org/1999/xhtml" style="font-family: Raleway; font-size: 0px; color: white; text-transform: uppercase; padding: 0px"><p data-v-67a2f1ed="" class="badge-header" style="background-color: rgb(244, 67, 54); padding: 0.32rem; display: inline-block; font-size: 0.32rem; font-weight: bolder; letter-spacing: 0.05rem; text-align: center;">skill</p> <p data-v-67a2f1ed="" class="badge-tail" style="background-color: rgb(211, 47, 47); padding: 0.32rem; display: inline-block; font-size: 0.32rem; letter-spacing: 0.05rem; text-align: center;">html</p></div></foreignObject></svg>
                           </li>
                           <li>
-                              <svg xmlns='http://www.w3.org/2000/svg' width='149' height='47'><foreignObject width='100%' height='100%'><div xmlns='http://www.w3.org/1999/xhtml' style='font-family: Raleway; font-size: 0px; color: white; text-transform: uppercase; padding: 0px'><p class="header" style="display: inline-block; padding: 0.6rem 1rem; font-size: 12px; letter-spacing: 3px; background-color: rgb(38, 166, 154);"> SKILL</p> <p class="tail" style="display: inline-block; padding: 0.6rem 1rem; font-weight: 700; font-size: 12px; letter-spacing: 3px; background-color: rgb(0, 150, 136);">vue</p></div></foreignObject></svg>
+                              <svg xmlns="http://www.w3.org/2000/svg" width="3.68rem" height="1.3866666666666667rem"><foreignObject width="100%" height="100%"><div xmlns="http://www.w3.org/1999/xhtml" style="font-family: Raleway; font-size: 0px; color: white; text-transform: uppercase; padding: 0px"><p data-v-67a2f1ed="" class="badge-header" style="background-color: rgb(156, 39, 176); padding: 0.32rem; display: inline-block; font-size: 0.32rem; font-weight: bolder; letter-spacing: 0.05rem; text-align: center;">skill</p> <p data-v-67a2f1ed="" class="badge-tail" style="background-color: rgb(123, 31, 162); padding: 0.32rem; display: inline-block; font-size: 0.32rem; letter-spacing: 0.05rem; text-align: center;">css</p></div></foreignObject></svg>
+                          </li>
+                          <li>
+                              <svg xmlns="http://www.w3.org/2000/svg" width="3.4133333333333336rem" height="1.3866666666666667rem"><foreignObject width="100%" height="100%"><div xmlns="http://www.w3.org/1999/xhtml" style="font-family: Raleway; font-size: 0px; color: white; text-transform: uppercase; padding: 0px"><p data-v-67a2f1ed="" class="badge-header" style="background-color: rgb(255, 235, 59); padding: 0.32rem; display: inline-block; font-size: 0.32rem; font-weight: bolder; letter-spacing: 0.05rem; text-align: center;">skill</p> <p data-v-67a2f1ed="" class="badge-tail" style="background-color: rgb(251, 192, 45); padding: 0.32rem; display: inline-block; font-size: 0.32rem; letter-spacing: 0.05rem; text-align: center;">js</p></div></foreignObject></svg>
+                          </li>
+                          <li>
+                              <svg xmlns="http://www.w3.org/2000/svg" width="5.226666666666667rem" height="1.3866666666666667rem"><foreignObject width="100%" height="100%"><div xmlns="http://www.w3.org/1999/xhtml" style="font-family: Raleway; font-size: 0px; color: white; text-transform: uppercase; padding: 0px"><p data-v-67a2f1ed="" class="badge-header" style="background-color: rgb(76, 175, 80); padding: 0.32rem; display: inline-block; font-size: 0.32rem; font-weight: bolder; letter-spacing: 0.05rem; text-align: center;">POWERED BY</p> <p data-v-67a2f1ed="" class="badge-tail" style="background-color: rgb(56, 142, 60); padding: 0.32rem; display: inline-block; font-size: 0.32rem; letter-spacing: 0.05rem; text-align: center;">vue</p></div></foreignObject></svg>
                           </li>
                       </ul>
                   </drawer>
                   <drawer icon-name="visibility" title-name="机器视觉技术栈">
                       <ul class="drawer-container">
                           <li>
-                              <svg xmlns='http://www.w3.org/2000/svg' width='255' height='47'><foreignObject width='100%' height='100%'><div xmlns='http://www.w3.org/1999/xhtml' style='font-family: Raleway; font-size: 0px; color: white; text-transform: uppercase; padding: 0px'><p class="header" style="display: inline-block; padding: 0.6rem 1rem; font-size: 12px; letter-spacing: 3px; background-color: rgb(79, 195, 247);">POWERED BY</p> <p class="tail" style="display: inline-block; padding: 0.6rem 1rem; font-weight: 700; font-size: 12px; letter-spacing: 3px; background-color: rgb(3, 169, 244);">gans&amp;cv</p></div></foreignObject></svg>
+                              <svg xmlns="http://www.w3.org/2000/svg" width="6.293333333333333rem" height="1.3866666666666667rem"><foreignObject width="100%" height="100%"><div xmlns="http://www.w3.org/1999/xhtml" style="font-family: Raleway; font-size: 0px; color: white; text-transform: uppercase; padding: 0px"><p data-v-67a2f1ed="" class="badge-header" style="background-color: rgb(121, 85, 72); padding: 0.32rem; display: inline-block; font-size: 0.32rem; font-weight: bolder; letter-spacing: 0.05rem; text-align: center;">POWERED BY</p> <p data-v-67a2f1ed="" class="badge-tail" style="background-color: rgb(93, 64, 55); padding: 0.32rem; display: inline-block; font-size: 0.32rem; letter-spacing: 0.05rem; text-align: center;">gans&amp;cv</p></div></foreignObject></svg>
                           </li>
                           <li>
-                              <svg xmlns='http://www.w3.org/2000/svg' width='183' height='47'><foreignObject width='100%' height='100%'><div xmlns='http://www.w3.org/1999/xhtml' style='font-family: Raleway; font-size: 0px; color: white; text-transform: uppercase; padding: 0px'><p class="header" style="display: inline-block; padding: 0.6rem 1rem; font-size: 12px; letter-spacing: 3px; background-color: rgb(255, 205, 210);"> SKILL</p> <p class="tail" style="display: inline-block; padding: 0.6rem 1rem; font-weight: 700; font-size: 12px; letter-spacing: 3px; background-color: rgb(244, 67, 54);">python</p></div></foreignObject></svg>
+                              <svg xmlns="http://www.w3.org/2000/svg" width="5.44rem" height="1.3866666666666667rem"><foreignObject width="100%" height="100%"><div xmlns="http://www.w3.org/1999/xhtml" style="font-family: Raleway; font-size: 0px; color: white; text-transform: uppercase; padding: 0px"><p data-v-67a2f1ed="" class="badge-header" style="background-color: rgb(3, 169, 244); padding: 0.32rem; display: inline-block; font-size: 0.32rem; font-weight: bolder; letter-spacing: 0.05rem; text-align: center;">maked BY</p> <p data-v-67a2f1ed="" class="badge-tail" style="background-color: rgb(2, 136, 209); padding: 0.32rem; display: inline-block; font-size: 0.32rem; letter-spacing: 0.05rem; text-align: center;">python</p></div></foreignObject></svg>
                           </li>
                       </ul>
                   </drawer>
@@ -297,6 +266,4 @@
         }
     }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 

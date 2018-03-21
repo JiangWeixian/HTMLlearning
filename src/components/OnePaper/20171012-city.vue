@@ -31,8 +31,8 @@
           button = document.querySelector('#CITYPLACE')
         const time = 200
         if (!this.click) {
-          Velocity(info, {marginTop: '74vh'}, {duration: time, easing: "easeInSine"})
-          Velocity(button, {top: '64vh'}, {duration: time, easing: "easeInSine"})
+          Velocity(info, {marginTop: '78vh'}, {duration: time, easing: "easeInSine"})
+          Velocity(button, {top: '68vh'}, {duration: time, easing: "easeInSine"})
           this.click = true
         }
         else {
@@ -46,16 +46,11 @@
 </script>
 
 <style scoped>
-  html{
-    font-size: 62.5%;
-    width: 100%;
-  }
   body {
     width: 100%;
     height: 100%;
     padding: 0;
     margin: 0;
-    line-height: 1.5;
   }
   .city-bg {
     margin: 0;
@@ -69,6 +64,7 @@
   }
   .city-name {
     width: 540px;
+    font-family: Raleway, sans-serif;   
     border: 12px white solid;
     position: absolute;
     padding: 6px 24px;
@@ -106,7 +102,7 @@
   .city-bg .material-icons {
     cursor: pointer;
     color: white;
-    font-size: 40px;
+    font-size: 48px;
     position: absolute;
     left: 50%;
     top: 90vh;
@@ -125,20 +121,19 @@
     }
   }
   .city-info {
-    width: 98%;
+    width: 100%;
     background-color: white;
     padding-top: 72px;
     padding-bottom: 72px;
     margin: 0 auto;
     margin-top: 100vh;
-    border-radius: 10px;
     box-shadow: 2px 2px 10px 2px black;
     font-size: 0px;
   }
   .city-info ul li{
     display: inline-block;
     color: #ccc;
-    font-size: 40px;
+    font-size: 96px;
     font-weight: lighter;
     position: relative;
     width: 33.3%;
@@ -157,6 +152,12 @@
     color: black;
     font-weight: 600;
   }
-
-
+  @media screen and (max-width: 750px) {
+      .city-info {
+          padding-top: 48px;
+      }
+      .city-info ul li {
+         font-size: 28px; 
+      }
+  }  
 </style>

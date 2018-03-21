@@ -9,15 +9,13 @@
         text-indent: 12px;
         font-family: 'Noto Sans', sans-serif;
         font-size: 14px;
-        line-height: inherit;
+        line-height: 72px;
     }
     .searcher .search-icon {
         position: absolute;
         right: 0;
         top: 0;
-        width: 36px;
-        height: 36px;
-        line-height: inherit;
+        font-size: 48px;
         background-color: #f5f5f5;
         cursor: pointer;
     }
@@ -31,8 +29,8 @@
 
 <template>
     <div id="SEARCHER" class="searcher">
-        <input type="text" id="SEARCHCONTENT" v-model="searchContent" @blur="changeStatus(false)" @focus="changeStatus(true)" @keyup.enter="input">
-        <i class="material-icons search-icon" :class="[inputStatus? 'focus' : '']" @click="input">search</i>
+        <input type="text" id="SEARCHCONTENT" v-model="searchContent" @blur="changeStatus(false)" @focus="changeStatus(true)" @keyup.enter="input" :style="inputStyle">
+        <i class="material-icons search-icon" :class="[inputStatus? 'focus' : '']" @click="input" :style="iconStyle">search</i>
     </div>
 </template>
 
@@ -45,6 +43,7 @@
                 inputStatus: false
             }
         },
+        props: ['lh', 'iFontSize'],
         computed: {
             isPc() {
                 var ua = navigator.userAgent,
@@ -57,6 +56,23 @@
                     isPhone = /(?:iPhone)/.test(ua) && !isTablet,
                     isPc = !isPhone && !isAndroid && !isSymbian;
                 return isPc
+            },
+            ratio () {
+                return 1
+            },
+            inputStyle() {
+                return {
+                    lineHeight: (this.lh / 75.0) * this.ratio + 'rem'
+                }
+                
+            },
+            iconStyle() {
+                return {
+                    lineHeight: (this.lh / 75.0) * this.ratio + 'rem',
+                    width: (this.lh / 75.0) * this.ratio + 'rem',
+                    height: (this.lh / 75.0) * this.ratio + 'rem',
+                    fontSize: (this.iFontSize / 75.0) * this.ratio + 'rem'
+                }
             }
         },
         methods: {

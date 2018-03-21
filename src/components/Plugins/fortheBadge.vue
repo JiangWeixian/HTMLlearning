@@ -7,7 +7,7 @@
     .badge-form .badge-header-select,
     .badge-form input {
         width: 33.3%;
-        padding: 1rem;
+        padding: 24px;
         box-sizing: border-box;
         float: left;
         text-align: center;
@@ -16,21 +16,25 @@
         text-align: center;
     }
     .forthebadge {
-        margin-top: 2rem;
+        margin-top: 48px;
     }
     button {
-        margin: 2rem 0;
-        padding: 0.5rem 0.7rem;
-        background-color: #f5f5f5;
+        margin: 48px 0;
+        padding: 12px 14px;
+        background-color: white;
     }
     .badge-output {
-        padding: 1rem 2rem;
-        min-height: 40rem;
+        padding: 24px 48px;
+        min-height: 240px;
     }
     .forthebadge-copyright {
-        padding-top: 0.5rem;
+        padding-top: 12px;
         text-align: left;
-        font-size: 1.5rem;
+        font-size: 36px;
+    }
+    .badge-output img {
+        width: auto;
+        height: 100px!important;
     }
 </style>
 
@@ -49,7 +53,7 @@
                 <p class="badge-tail" :style="tailStyle">{{ tailValue }}</p>
             </div>
             <button @click="convert()">CONVERT</button>
-            <div class="paper badge-output"></div>
+            <div class="paper badge-output" v-html="svgData"></div>
             <p class="forthebadge-copyright">
                 Inspired by this <a href="http://forthebadge.com">forthebadge</a>
             </p>
@@ -65,7 +69,8 @@
             return {
                 selectedColor: 'red',
                 headerValue: 'POWERED BY',
-                tailValue: 'LOVE'
+                tailValue: 'LOVE',
+                svgData: ''
             }
         },
         computed: {
@@ -77,11 +82,11 @@
             headerStyle() {
                 let headerColor = color[this.selectedColor][this.selectedColor + '500'],
                     style = {'background-color': headerColor, 
-                        'padding': '1rem', 
+                        'padding': '0.32rem', 
                         'display': 'inline-block',
-                        'font-size': '1rem', 
+                        'font-size': '0.32rem', 
                         'font-weight': 'bolder',
-                        'letter-spacing': '2px',
+                        'letter-spacing': '0.05rem',
                         'text-align': 'center'};
                 let str = ''
                 Object.keys(style).map(value => {
@@ -93,10 +98,10 @@
             tailStyle() {
                 let tailColor = color[this.selectedColor][this.selectedColor + '700'],
                     style = {'background-color': tailColor,
-                        'padding': '1rem',
+                        'padding': '0.32rem',
                         'display': 'inline-block',
-                        'font-size': '1rem',
-                        'letter-spacing': '2px',
+                        'font-size': '0.32rem',
+                        'letter-spacing': '0.05rem',
                         'text-align': 'center'};
                 let str = '';
                 Object.keys(style).map(value => {
@@ -110,21 +115,17 @@
                 let badge = document.querySelector('.forthebadge').innerHTML;
                 let badgeHeader = document.querySelector('.badge-header')
                     , badgeTail = document.querySelector('.badge-tail');
-                let badgeWidth = badgeHeader.clientWidth + badgeTail.clientWidth + 100
-                    , badgeHeight = badgeHeader.clientHeight + 30;
+                let badgeWidth = ((badgeHeader.clientWidth + badgeTail.clientWidth + 20) / 75.0) * 2 + 'rem'
+                    , badgeHeight = ((badgeHeader.clientHeight + 10) / 75.0) * 2 + 'rem';
                 console.log(badgeWidth, badgeHeight)
                 if (this.headerValue && this.tailValue) {
-                    let data = 'data:image/svg+xml,' +
-                        "<svg xmlns='http://www.w3.org/2000/svg' width=" + "'" + badgeWidth + "'" + " height=" + "'" + badgeHeight + "'" + ">" +
+                    this.svgData += "<svg xmlns='http://www.w3.org/2000/svg' width=" + "'" + badgeWidth + "'" + " height=" + "'" + badgeHeight + "'" + ">" +
                         "<foreignObject width='100%' height='100%'>" +
                         "<div xmlns='http://www.w3.org/1999/xhtml' style='font-family: Raleway; font-size: 0px; color: white; text-transform: uppercase; padding: 0px'>" +
                         badge +
                         '</div>' +
                         '</foreignObject>' +
-                        '</svg>';
-                    let img = new Image();
-                    img.src = data;
-                    document.querySelector('.badge-output').appendChild(img)
+                        '</svg>'
                 }
             }
         }

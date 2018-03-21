@@ -8,33 +8,33 @@
         text-align: left;
         font-family: 'Roboto Mono', monospace;
         font-weight: bolder;
-        font-size: 16px;
+        font-size: 32px;
         line-height: 16px;
         position: relative;
         color: #ccc;
-        margin-top: 12px;
+        margin-top: 48px;
     }
     .neo-time::before {
         content: ' ';
-        width: 10px;
-        height: 10px;
-        border-radius: 5px;
+        width: 20px;
+        height: 20px;
+        border-radius: 20px;
         display: block;
         background: #ccc;
         position: absolute;
-        left: -20px;
-        top: 5px;
+        left: -40px;
+        top: 0px;
     }
     .neo-time .tag-bug {
         color: white;
         background-color: red;
-        font-size: 10px;
-        line-height: 12px;
+        font-size: 24px;
+        line-height: 24px;
         font-weight: normal;
-        padding: 2px;
+        padding: 4px 6px;
     }
     .neo-item .card-title {
-        font-size: 24px;
+        font-size: 28px;
     }
 
     @media screen and (max-width: 1440px) {
@@ -43,13 +43,13 @@
         }
     }
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1024px) {
         .neo-item {
-            width: 70%;
+            width: 80%;
         }
     }
 
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 750px) {
         .neo-time {
             display: none;
         }
@@ -75,7 +75,7 @@
                     </div>
                     <div class="card-content">
                         <p>{{ item.detail }}</p>
-                    </div>
+                    </div>n
                 </div>
             </li>
         </ul>

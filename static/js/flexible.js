@@ -8,6 +8,15 @@
     var scale = 0;
     var tid;
     var flexible = lib.flexible || (lib.flexible = {});
+    var ua = navigator.userAgent,
+        isWindowsPhone = /(?:Windows Phone)/.test(ua),
+        isSymbian = /(?:SymbianOS)/.test(ua) || isWindowsPhone,
+        isAndroid = /(?:Android)/.test(ua),
+        isFireFox = /(?:Firefox)/.test(ua),
+        isChrome = /(?:Chrome|CriOS)/.test(ua),
+        isTablet = /(?:iPad|PlayBook)/.test(ua) || (isAndroid && !/(?:Mobile)/.test(ua)) || (isFireFox && /(?:Tablet)/.test(ua)),
+        isPhone = /(?:iPhone)/.test(ua) && !isTablet,
+        isPc = !isPhone && !isAndroid && !isSymbian;
     
 
     if (metaEl) {
@@ -75,10 +84,15 @@
         }
         width = width === 540? 750:width
         var rem = width / 10;
-        docEl.style.fontSize = rem + 'px';
-        flexible.rem = win.rem = rem;
+        if (isPc) {
+            docEl.style.fontSize = 37.5 + 'px';
+            flexible.rem = win.rem = 37.5;
+        }
+        else {
+            docEl.style.fontSize = rem + 'px';
+            flexible.rem = win.rem = rem;
+        }
         
-
     }
 
     win.addEventListener('resize', function() {

@@ -129,9 +129,9 @@
     left: 0;
     right: 0;
     bottom: 0;
-    height: 90%;
+    height: 70%;
     background-color: white;
-    border-radius: 5px;
+    border-radius: 10px;
     box-shadow: 0px 0px 10px 2px rgba(71, 160, 240, 0.2);
     opacity: 0;
   }
@@ -206,26 +206,26 @@
     position: absolute;
     width: 100%;
     height: 10%;
-    top: 360px;
+    top: 720px;
     left: 0;
   }
   .shareCard-button button {
     background: none;
-    border: 2px solid rgba(255, 255, 255, 0.6);
-    padding: 0.50px 0 0.50px 0;
+    border: 4px solid rgba(255, 255, 255, 0.6);
+    padding: 1px 0;
     cursor: pointer;
   }
   .shareCard-button button.prev {
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     float: left;
-    margin-left: -20px;
+    margin-left: -40px;
   }
   .shareCard-button button.next {
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     float: right;
-    margin-right: -20px;
+    margin-right: -40px;
   }
   .shareCard-button i {
     color: rgba(255, 255, 255, 0.6);

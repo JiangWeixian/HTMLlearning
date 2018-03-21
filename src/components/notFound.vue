@@ -4,23 +4,23 @@
     }
     .notfound-wrapper {
         font-family: 'Raleway', sans-serif;
+        
+    }
+    .notfound-card {
         position: absolute;
         width: 100%;
         left: 0;
         top: 50%;
-        margin-top: -15rem;
-    }
-    .notfound-card {
-        margin: 0 auto;
+        margin-top: -300px;
         text-align: center;
     }
     .notfound-card p {
         color: #4b1d27;
-        font-size: 15rem;
+        font-size: 250px;
         font-weight: bolder;
     }
     button {
-        margin-top: 2rem;
+        margin-top: 48px;
         background-color: white;
     }
     button:active {

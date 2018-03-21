@@ -7,8 +7,7 @@
     }
     header {
         width: 100%;
-        padding: 0 0 6px 0;
-        margin-bottom: 120px;
+        padding: 20px 0 15px 0;
         background-color: white;
         box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
         position: fixed;
@@ -34,19 +33,15 @@
         color: #0c72ee;
     }
     header nav .homepage-icon img{
-        width: 37px;
-        height: 37px;
+        width: 75px;
+        height: 75px;
         object-fit: cover;
         border-radius: 100px;
     }
-    .global-searcher {
-        line-height: 36px;
-    }
     footer {
-        display: flex;
         width: 100%;
         background-color: white;
-        box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
         position: relative;
         left: 0;
         top: 0;
@@ -56,27 +51,27 @@
     footer .main {
         width: 65%;
         margin: 0 auto;
-        padding: 24px 0;
+        padding: 48px 0;
         text-align: left;
         text-indent: 6px;
     }
     footer .author {
-        font-size: 20px;
+        font-size: 36px;
         font-weight: bolder;
     }
     footer .copyright {
-        padding-top: 6px;
-        font-size: 12px;
+        padding-top: 12px;
+        font-size: 24px;
     }
     footer .linkme {
-        margin: 18px 0 0 0;
+        margin: 36px 0 0 0;
     }
     footer .linkme ul {
         list-style: none;
     }
     footer .linkme ul li img {
-        width: 24px;
-        height: 24px;
+        width: 48px;
+        height: 48px;
     }
 
     @media screen and (max-width: 1280px){
@@ -98,45 +93,20 @@
     }
 
     @media screen and (max-width: 750px){
-        header {
-            margin-bottom: 0;
-        }
         header .main {
             width: 95%;
-        }
-        header .main .homepage-icon img {
-            width: 72px;
-            height: 72px;
-            object-fit: cover;
-            border-radius: 100px;
         }
         header .main .router-name {
             display: none;
         }
         .searcher-wrapper {
-            width: 80%;
-        }
-        .global-searcher {
-            line-height: 72px;
+            width: 88%;
         }
         footer {
             display: none;
         }
     }
-
-    @media screen and (max-width: 375px){
-        header {
-            background-color: red;
-        }
-
-    }
-
-    @media screen and (max-width: 320px){
-        .searcher-wrapper {
-            width: 85%;
-        }
-
-    }
+    
 
 </style>
 
@@ -151,7 +121,7 @@
                   </nav>
               </div>
               <div class="pull-right searcher-wrapper">
-                  <searcher class="global-searcher" @search="search" :lh="75"></searcher>
+                  <searcher class="global-searcher" @search="search" :lh="75" :iFontSize="48"></searcher>
               </div>
           </div>
       </header>
@@ -176,6 +146,7 @@
 
 <script>
 import Searcher from "./components/UI/searcher";
+import './assets/css/global.css'
 
 export default {
     components: {Searcher},
