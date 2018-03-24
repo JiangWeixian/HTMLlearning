@@ -37,30 +37,30 @@
     }
     .dogs-content {
         text-align: left;
-        width: 600px;
+        width: 1200px;
         left: 50%;
-        margin-left: -300px;
-        top: 576px;
+        margin-left: -650px;
+        top: 1000px;
         z-index: 999;
     }
     .dogs-content, p.content-title {
         font-family: 'Roboto', sans-serif;
-        font-size: 20px;
+        font-size: 48px;
         font-weight: lighter;
         position: relative;
     }
     .dogs-content .content-title::after {
         content: ' ';
         display: block;
-        width: 66px;
-        height: 1px;
+        width: 156px;
+        height: 2px;
         position: absolute;
         top: 100%;
         left: 2px;
         background-color: black;
     }
     .dogs-content .content-words {
-        font-size: 100px;
+        font-size: 200px;
         font-weight: bolder;
         font-family: 'Noto Sans', sans-serif;
         position: relative;
@@ -70,13 +70,13 @@
     }
     @keyframes belong {
         from {width: 0px}
-        to {width: 600px}
+        to {width: 1200px}
     }
     .dogs-content .content-words::after {
         content: ' ';
         display: block;
-        width: 600px;
-        height: 30px;
+        width: 1200px;
+        height: 60px;
         position: absolute;
         z-index: -1;
         top: 65%;

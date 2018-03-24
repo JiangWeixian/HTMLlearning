@@ -124,12 +124,40 @@
 </template>
 
 <script>
+    import axios from 'axios'
     export default {
         name: "uitest",
         methods: {
+            get_issue_bylabel (label, creator) {
+                let url = `https://api.github.com/repos/JiangWeixian/HTMLlearning/issues?labels=${label}`;
+                return axios.get('https://api.github.com/repos/JiangWeixian/HTMLlearning/issues', {
+                    params: {
+                        labels: label,
+                        creator: creator
+                    }
+                })
+                    .then((res) => {
+                        let data = res.data[0].body;
+                        return Promise.resolve(data)
+                    })
+                    .catch((error) => {
+                        console.log(error)
+                    })
+            },
             test() {
-                alert(lib.flexible.rem)
+                axios.get('./static/public/projects/onepaper.json')
+                    .then((res) => {
+                        console.log(res)
+                    })
+                // this.get_issue_bylabel('onepaper', 'JiangWeixian')
+                //     .then((data) => {
+                //         let onepaper = JSON.parse(data)
+                //         console.log(Object.keys(onepaper))
+                //     })
             }
+        },
+        created() {
+            this.$store.dispatch('set_single_project', { projectName: 'onepaper' })
         }
     }
 </script>

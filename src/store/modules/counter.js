@@ -1,8 +1,12 @@
 import Vue from 'vue'
+import axios from 'axios'
 
 const state = {
-    blog: 'jiangweixian',
+    author: 'JiangWeixian',
+    apiUrl: './static/public/',
     searchContent: '',
+    onepaperList: [],
+    onepaperThreads: {},
     projectLists: ['onepaper', 'plugins', 'ui'],
     projectThreads: {
         'onepaper': {
@@ -232,12 +236,34 @@ const state = {
 const mutations = {
     SET_SEARCHCONTENT ( state, { searchContent }) {
         state.searchContent = searchContent
+    },
+    SET_SINGLE_PROJECT (state, { data, projectName }) {
+        let projectsLists = `${projectName}Lists`,
+            projectThreads = `${projectName}Threads`;
+        state[projectsLists] = Object.keys(data);
+        state[projectThreads] = data;
     }
 };
 
 const actions = {
     set_searchcontent ({ commit }, { searchContent }) {
         commit('SET_SEARCHCONTENT', { searchContent })
+    },
+    set_single_project (context , { projectName }) {
+        let projectsLists = `${projectName}Lists`,
+            projectThreads = `${projectName}Threads`,
+            url = `${context.state.apiUrl}projects/${projectName}.json`;
+        console.log(projectsLists, projectThreads)
+        if ( !context.state[projectsLists] && !context.state[projectThreads]) {
+            api.fetch(url)
+                .then((data) => {
+                    console.log(data)
+                    context.commit('SET_SINGLE_PROJECT', { data: data, projectName: projectsName })
+                })
+        }
+        else {
+            console.log('already exited')
+        }
     }
 };
 
@@ -269,6 +295,16 @@ const getters = {
     get_projectlens (state) {
         return state.projectLists.length
     },
+    get_single_project: (state) => (label) => {
+        if (state.onepaperThreads && state.onepaperLists) {
+            return state.onepaperList.map((id) => {
+                return state.onepaperThreads[id]
+            })
+        }
+        else {
+            return []
+        }
+    },
     get_seachcontent ( state ) {
         return state.searchContent;
     }
@@ -283,6 +319,16 @@ const api = {
     },
     updateArticleList (state, id) {
         state.articleLists.push(id)
+    },
+    fetch (url) {
+        return axios.get(url)
+            .then((res) => {
+                let data = res.data;
+                return Promise.resolve(data)
+            })
+            .catch((error) => {
+                console.log(error)
+            })
     }
 }
 

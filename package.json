@@ -10,6 +10,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "babel-plugin-syntax-object-rest-spread": "^6.13.0",
     "cssnano-preset-advanced": "^4.0.0-rc.2",
     "encodeurl": "^1.0.1",
