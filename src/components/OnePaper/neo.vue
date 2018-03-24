@@ -88,65 +88,7 @@
         name: "neo",
         data () {
             return {
-                name: 'neo',
-                paperLists: ['loginBall','weather', 'cityInfo', 'shareCard', 'beginWithDogs'],
-                papers: {
-                    'loginBall': {
-                        id: 'loginBall',
-                        router: '/onepaper/loginBall',
-                        time: '2017-10-28',
-                        src: 'https://raw.githubusercontent.com/JiangWeixian/HTMLlearning/master/README/projects/onepaper/onepaper-loginball.png',
-                        alt: 'login',
-                        color: 'white',
-                        title: '<login-ball>',
-                        detail: '登录/弹珠',
-                        bug: false
-                    },
-                    'weather': {
-                        id: 'weather',
-                        router: '/onepaper/weather',
-                        time: '2017-10-30',
-                        src: 'https://raw.githubusercontent.com/JiangWeixian/HTMLlearning/master/README/projects/onepaper/onepaper-weather.png',
-                        alt: 'weather',
-                        color: 'white',
-                        title: '<weather-card>',
-                        detail: '天气/毛玻璃风格',
-                        bug: false,
-                    },
-                    'cityInfo': {
-                        id: 'cityInfo',
-                        router: '/onepaper/cityInfo',
-                        time: '2017-10-12',
-                        src: 'https://raw.githubusercontent.com/JiangWeixian/HTMLlearning/master/README/projects/onepaper/onepaper-city-info.png',
-                        alt: 'shanghai',
-                        color: 'white',
-                        title: '<city-info>',
-                        detail: '城市卡片',
-                        bug: false
-                    },
-                    'shareCard': {
-                        id: 'shareCard',
-                        router: '/onepaper/shareCard',
-                        time: '2017-10-28',
-                        src: 'https://raw.githubusercontent.com/JiangWeixian/HTMLlearning/master/README/projects/onepaper/onepaper-sharecard.png',
-                        alt: 'shareCard',
-                        color: 'white',
-                        title: '<share-card>',
-                        detail: '分享卡片/仅有动画',
-                        bug: true,
-                    },
-                    'beginWithDogs': {
-                        id: 'beginWithDogs',
-                        router: '/onepaper/beginWithDogs',
-                        time: '2018-02-16',
-                        src: 'https://raw.githubusercontent.com/JiangWeixian/HTMLlearning/master/README/projects/onepaper/onepaper-beginwithdogs.png',
-                        alt: '2018',
-                        color: 'black',
-                        title: '<begin-with-dogs>',
-                        detail: '2018, 开局一条狗',
-                        bug: false
-                    }
-                }
+                name: 'neo'
             }
         },
         computed: {
@@ -154,21 +96,14 @@
                 searchContent: 'get_seachcontent'
             }),
             sortedPapers() {
-                let neoPapers = this.paperLists.map((id) => {
-                    var item =  this.papers[id],
-                        tags = this.searchContent.toLocaleLowerCase();
-                    item.style = {
-                        color: item.color
-                    };
-                    return item
-                });
-                let sortedNeoPapers = neoPapers
+                let projectLists = this.$store.getters.get_single_project('onepaper');
+                let sortedNeoPapers = projectLists
                     .slice()
                     .sort((a, b) => {
                         var aTime = new Date(a.time),
                             bTime = new Date(b.time);
                         return aTime - bTime
-                    })
+                    });
                 return sortedNeoPapers.filter(item => item.detail.includes(this.searchContent))
             }
         },
@@ -176,6 +111,9 @@
             link(url) {
                 this.$router.push({ path: url })
             }
+        },
+        created() {
+            this.$store.dispatch('set_single_project', { projectName: 'onepaper' })
         }
     }
 </script>

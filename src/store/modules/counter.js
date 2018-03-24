@@ -5,7 +5,7 @@ const state = {
     author: 'JiangWeixian',
     apiUrl: './static/public/',
     searchContent: '',
-    onepaperList: [],
+    onepaperLists: [],
     onepaperThreads: {},
     projectLists: ['onepaper', 'plugins', 'ui'],
     projectThreads: {
@@ -253,12 +253,11 @@ const actions = {
         let projectsLists = `${projectName}Lists`,
             projectThreads = `${projectName}Threads`,
             url = `${context.state.apiUrl}projects/${projectName}.json`;
-        console.log(projectsLists, projectThreads)
-        if ( !context.state[projectsLists] && !context.state[projectThreads]) {
+        let fetchFlag = api.isEmptyArr(context.state[projectsLists]) || api.isEmptyObject(context.state[projectThreads]); 
+        if ( fetchFlag ) {
             api.fetch(url)
                 .then((data) => {
-                    console.log(data)
-                    context.commit('SET_SINGLE_PROJECT', { data: data, projectName: projectsName })
+                    context.commit('SET_SINGLE_PROJECT', { data: data, projectName: projectName })
                 })
         }
         else {
@@ -296,13 +295,16 @@ const getters = {
         return state.projectLists.length
     },
     get_single_project: (state) => (label) => {
-        if (state.onepaperThreads && state.onepaperLists) {
-            return state.onepaperList.map((id) => {
-                return state.onepaperThreads[id]
-            })
+        let projectsLists = `${label}Lists`,
+            projectThreads = `${label}Threads`;
+        let flag = api.isEmptyArr(state[projectsLists]) || api.isEmptyObject(state[projectThreads]);
+        if ( flag ) {
+            return []
         }
         else {
-            return []
+            return state[projectsLists].map((id) => {
+                return state[projectThreads][id]
+            })
         }
     },
     get_seachcontent ( state ) {
@@ -329,6 +331,18 @@ const api = {
             .catch((error) => {
                 console.log(error)
             })
+    },
+    isEmptyObject (obj) {
+        if (Object.keys(obj).length !== 0) {
+            return false
+        }
+        return true
+    },
+    isEmptyArr (arr) {
+        if (Array.isArray(arr) && arr.length !== 0) {
+            return false
+        }
+        return true
     }
 }
 

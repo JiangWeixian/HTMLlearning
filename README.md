@@ -24,9 +24,8 @@ This Repositories online redirected to [JiangWeixian's blog](https://jiangweixia
     * [x] - 大致修改完毕，不知道手机上怎么样
     * [x] - 还剩下beginwithdongs没改
 * [ ] - ~~将github issue作为博客数据库地址。好好想想怎么设计。~~目前方案把数据放在`static/public/`文件夹中，用axios请求。
+    * [x] - 讲onepaper数据放到static文件中的json文件
 * [ ] - 加入评论系统disqus
 * 博客组件化
     * [ ] - card.vue(use grid)
     * [ ] - 轮播器
-
-test
