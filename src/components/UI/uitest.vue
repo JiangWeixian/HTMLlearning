@@ -149,11 +149,39 @@
                     .then((res) => {
                         console.log(res)
                     })
-                // this.get_issue_bylabel('onepaper', 'JiangWeixian')
-                //     .then((data) => {
-                //         let onepaper = JSON.parse(data)
-                //         console.log(Object.keys(onepaper))
-                //     })
+                let projects = {
+                    'onepaper': {
+                        id: 'onepaper',
+                        router: '/onepaper',
+                        src: 'https://raw.githubusercontent.com/JiangWeixian/HTMLlearning/master/README/projects/projects-onepaper.jpg',
+                        alt: 'onepaper',
+                        color: 'white',
+                        title: 'ONEPAPER',
+                        time: '2018-10-1',
+                        content: '单页Vue页面，UI/动画/组件设计。属于练手项目'
+                    },
+                    'plugins': {
+                        id: 'plugins',
+                        router: '/',
+                        src: 'https://raw.githubusercontent.com/JiangWeixian/HTMLlearning/master/README/projects/projects-components.jpg',
+                        alt: 'plugins',
+                        color: 'white',
+                        title: 'PLUGINS',
+                        time: '2018-03-05',
+                        content: '具有实际功能的可用插件'
+                    },
+                    'ui': {
+                        id: 'ui',
+                        router: '/',
+                        alt: 'ui',
+                        color: 'white',
+                        src: 'https://raw.githubusercontent.com/JiangWeixian/HTMLlearning/master/README/projects/projects-uirules.jpg',
+                        title: 'UI',
+                        time: '2018-10-1',
+                        content: 'Blog UI 设计规范'
+                    }
+                }
+                console.log(JSON.stringify(projects))
             }
         },
         created() {
