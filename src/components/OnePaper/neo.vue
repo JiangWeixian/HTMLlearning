@@ -63,11 +63,11 @@
 <template>
     <div id="NEO" class="neo">
         <ul class="neo-lists page-container">
-            <li class="neo-item" v-for="item in sortedPapers">
+            <li class="neo-item" v-for="item in sortedPapers" :ref="item.id" v-show="show">
                 <p class="neo-time">{{ item.time }} <span class="tag-bug" v-show="item.bug">BUG</span> </p>
                 <div class="paper card">
                     <div class="card-img" @click="link(item.router)">
-                        <img :src="item.src" :alt="item.id">
+                        <img src="https://raw.githubusercontent.com/JiangWeixian/HTMLlearning/master/README/projects/onepaper/onepaper-city-info.png" :data-src="item.src" :alt="item.id" :ref="item.id">
                         <div class="card-intro" :style="item.style">
                             <p class="card-title">{{ item.title }}</p>
                             <p class="card-time">{{ item.time }}</p>
@@ -75,7 +75,7 @@
                     </div>
                     <div class="card-content">
                         <p>{{ item.detail }}</p>
-                    </div>n
+                    </div>
                 </div>
             </li>
         </ul>
@@ -88,7 +88,20 @@
         name: "neo",
         data () {
             return {
-                name: 'neo'
+                name: 'neo',
+                itemIdx: 0,
+                itemCnt: 0,
+                show: false
+            }
+        },
+        watch: {
+            itemCnt (val, oldval) {
+                if (val >= 3) {
+                    this.show = true
+                }
+                else {
+                    this.show = false
+                }
             }
         },
         computed: {
@@ -107,13 +120,79 @@
                 return sortedNeoPapers.filter(item => item.detail.includes(this.searchContent))
             }
         },
+        mounted() {
+            document.documentElement.scrollTop = 20
+            // this.onScrollHandler();
+            // this.init()
+            console.log(this.sortedPapers)
+            this.sortedPapers.map((item, index) => {
+                let id = item.id,
+                    domItem = this.$refs[id][1],
+                    domItemImg = this.$refs[id][0];
+                let img = new Image();
+                img.onload = () => {
+                    this.itemCnt++
+                };
+                img.src = item.src;
+                console.log(item.src)
+            })
+        },
         methods: {
             link(url) {
                 this.$router.push({ path: url })
+            },
+            ftech() {
+                return new Promise(resolve => {
+                    this.$store.dispatch('set_single_project', { projectName: 'onepaper' })
+                    resolve(true)
+                })
+            },
+            preLoad() {
+                console.log(this.$refs)
+                let imgs = document.querySelectorAll('img')
+                console.log(this.sortedPapers.length)
+                this.sortedPapers.map((item, index) => {
+                    let id = item.id,
+                        domItem = this.$refs[id][1],
+                        domItemImg = this.$refs[id][0];
+                    let img = new Image();
+                    img.onload = () => {
+                        this.itemCnt++
+                    };
+                    img.src = item.src;
+                    console.log(item.src)
+                })
+            },
+            onScrollHandler() {
+                let seeHeight = document.documentElement.clientHeight,
+                    scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+                this.sortedPapers.map((item, index) => {
+                    let id = item.id,
+                        domItem = this.$refs[id][1],
+                        domItemImg = this.$refs[id][0];
+                    let img = new Image();
+                    img.onload = () => {
+                        this.itemCnt++
+                    };
+                    img.src = domItemImg.getAttribute('data-src');
+                    if (domItem.offsetTop < seeHeight + scrollTop) {
+                        if (domItemImg.src === "https://raw.githubusercontent.com/JiangWeixian/HTMLlearning/master/README/projects/onepaper/onepaper-city-info.png") {
+                            domItemImg.src = domItemImg.getAttribute("data-src");
+                        }
+                    }
+                    this.n = index
+                })
+            },
+            bindEvent() {
+                window.addEventListener('scroll', this.onScrollHandler, false)
+            },
+            init() {
+                this.bindEvent()
             }
         },
         created() {
             this.$store.dispatch('set_single_project', { projectName: 'onepaper' })
+            this.show = true
         }
     }
 </script>

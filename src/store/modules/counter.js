@@ -250,6 +250,7 @@ const actions = {
         commit('SET_SEARCHCONTENT', { searchContent })
     },
     set_single_project (context , { projectName }) {
+        
         let projectsLists = `${projectName}Lists`,
             projectThreads = `${projectName}Threads`,
             url = `${context.state.apiUrl}projects/${projectName}.json`;
