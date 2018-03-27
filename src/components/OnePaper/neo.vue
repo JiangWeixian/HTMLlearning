@@ -59,39 +59,17 @@
     }
 </style>
 
-
-<template>
-    <div id="NEO" class="neo">
-        <ul class="neo-lists page-container">
-            <li class="neo-item" v-for="item in sortedPapers" :ref="item.id" v-show="show">
-                <p class="neo-time">{{ item.time }} <span class="tag-bug" v-show="item.bug">BUG</span> </p>
-                <div class="paper card">
-                    <div class="card-img" @click="link(item.router)">
-                        <img src="https://raw.githubusercontent.com/JiangWeixian/HTMLlearning/master/README/projects/onepaper/onepaper-city-info.png" :data-src="item.src" :alt="item.id" :ref="item.id">
-                        <div class="card-intro" :style="item.style">
-                            <p class="card-title">{{ item.title }}</p>
-                            <p class="card-time">{{ item.time }}</p>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <p>{{ item.detail }}</p>
-                    </div>
-                </div>
-            </li>
-        </ul>
-    </div>
-</template>
-
 <script>
     import { mapGetters } from 'vuex'
+    import Preload from "../UI/preload";
     export default {
+        components: {Preload},
         name: "neo",
         data () {
             return {
                 name: 'neo',
                 itemIdx: 0,
                 itemCnt: 0,
-                show: false
             }
         },
         watch: {
@@ -118,34 +96,36 @@
                         return aTime - bTime
                     });
                 return sortedNeoPapers.filter(item => item.detail.includes(this.searchContent))
+            },
+            imgUrls() {
+                return this.sortedPapers.map((item) => {
+                    return item.src
+                })
             }
         },
         mounted() {
-            document.documentElement.scrollTop = 20
+            // document.documentElement.scrollTop = 20
             // this.onScrollHandler();
             // this.init()
-            console.log(this.sortedPapers)
-            this.sortedPapers.map((item, index) => {
-                let id = item.id,
-                    domItem = this.$refs[id][1],
-                    domItemImg = this.$refs[id][0];
-                let img = new Image();
-                img.onload = () => {
-                    this.itemCnt++
-                };
-                img.src = item.src;
-                console.log(item.src)
-            })
+            // console.log(this.sortedPapers)
+            // this.sortedPapers.map((item, index) => {
+            //     let id = item.id,
+            //         domItem = this.$refs[id][1],
+            //         domItemImg = this.$refs[id][0];
+            //     let img = new Image();
+            //     img.onload = () => {
+            //         this.itemCnt++
+            //     };
+            //     img.src = item.src;
+            //     console.log(item.src)
+            // })
         },
         methods: {
             link(url) {
                 this.$router.push({ path: url })
             },
-            ftech() {
-                return new Promise(resolve => {
-                    this.$store.dispatch('set_single_project', { projectName: 'onepaper' })
-                    resolve(true)
-                })
+            imgAllLoaded(data) {
+                console.log(data)
             },
             preLoad() {
                 console.log(this.$refs)
@@ -192,8 +172,30 @@
         },
         created() {
             this.$store.dispatch('set_single_project', { projectName: 'onepaper' })
-            this.show = true
         }
     }
 </script>
 
+
+<template>
+    <div id="NEO" class="neo">
+        <ul class="neo-lists page-container">
+            <preload :img-url-arr="imgUrls" :order="false"></preload>
+            <li class="neo-item" v-for="item in sortedPapers" :ref="item.id">
+                <p class="neo-time">{{ item.time }} <span class="tag-bug" v-show="item.bug">BUG</span> </p>
+                <div class="paper card">
+                    <div class="card-img" @click="link(item.router)">
+                        <img :src="item.src" :data-src="item.src" :alt="item.id" :ref="item.id">
+                        <div class="card-intro" :style="item.style">
+                            <p class="card-title">{{ item.title }}</p>
+                            <p class="card-time">{{ item.time }}</p>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <p>{{ item.detail }}</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</template>

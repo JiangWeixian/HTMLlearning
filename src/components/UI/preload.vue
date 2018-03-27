@@ -1,12 +1,17 @@
 <template>
     <div class="preload">
-        <slot></slot>
+        <p>{{ loadedCnt }}</p>
     </div>
 </template>
 
 <script>
     export default {
         name: "preload",
+        data() {
+            return {
+                loadedCnt: 0
+            }
+        },
         props: {
             imgUrlArr: {
                 type: Array,
@@ -18,28 +23,30 @@
             },
         },
         methods: {
-            init() { // 根据传入的参数初始化
+            init() {
                 this.imgsSum = this.imgUrlArr.length
             },
-            unorderedPreload() { // 无序加载，并发下载图片
+            unorderedPreload() {
                 this.imgUrlArr.forEach((imgUrl, i) => {
                     var oImg = new Image();
+                    console.log(imgUrl)
                     oImg.addEventListener('load', this.imgLoaded);
                     oImg.addEventListener('error', this.imgLoaded);
                     oImg.src = imgUrl
                 })
             },
-            orderPreload() { // 有序加载，一次只有一张图片在下载
+            orderPreload() {
                 var oImg = new Image();
                 oImg.addEventListener('load', this.imgLoaded);
                 oImg.addEventListener('error', this.imgLoaded);
-                oImg.src = this.imgUrlArr[this.loadedCount]
+                oImg.src = this.imgUrlArr[this.loadedCnt]
             },
-            imgLoaded() { // 每次图片加载完成执行，无论成功或者失败
-                this.loadedCount++;
-                if (this.loadedCount >= this.imgsSum) {
+            imgLoaded() {
+                this.loadedCnt++;
+                console.log(this.loadedCnt)
+                if (this.loadedCnt >= this.imgsSum) {
                     this.show = false;
-                    this.$emit('imgAllLoaded')
+                    this.$emit('imgAllLoaded', this.loadedCnt)
                 } else if (this.order) {
                     this.orderPreload()
                 }
@@ -47,6 +54,7 @@
         },
         created() {
             this.init();
+            console.log(this.imgUrlArr.length)
             this.order ? this.orderPreload() : this.unorderedPreload()
         }
     }
