@@ -22,6 +22,12 @@
                 default: true
             },
         },
+        watch: {
+            imgUrlArr(val, oldVal) {
+                this.init();
+                this.order ? this.orderPreload() : this.unorderedPreload()
+            }
+        },
         methods: {
             init() {
                 this.imgsSum = this.imgUrlArr.length
@@ -29,7 +35,6 @@
             unorderedPreload() {
                 this.imgUrlArr.forEach((imgUrl, i) => {
                     var oImg = new Image();
-                    console.log(imgUrl)
                     oImg.addEventListener('load', this.imgLoaded);
                     oImg.addEventListener('error', this.imgLoaded);
                     oImg.src = imgUrl
@@ -43,7 +48,6 @@
             },
             imgLoaded() {
                 this.loadedCnt++;
-                console.log(this.loadedCnt)
                 if (this.loadedCnt >= this.imgsSum) {
                     this.show = false;
                     this.$emit('imgAllLoaded', this.loadedCnt)
@@ -51,11 +55,6 @@
                     this.orderPreload()
                 }
             }
-        },
-        created() {
-            this.init();
-            console.log(this.imgUrlArr.length)
-            this.order ? this.orderPreload() : this.unorderedPreload()
         }
     }
 </script>

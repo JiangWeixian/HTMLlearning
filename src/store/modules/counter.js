@@ -250,7 +250,6 @@ const actions = {
         commit('SET_SEARCHCONTENT', { searchContent })
     },
     set_single_project (context , { projectName }) {
-        
         let projectsLists = `${projectName}Lists`,
             projectThreads = `${projectName}Threads`,
             url = `${context.state.apiUrl}projects/${projectName}.json`;
@@ -258,6 +257,7 @@ const actions = {
         if ( fetchFlag ) {
             api.fetch(url)
                 .then((data) => {
+                    console.log(data)
                     context.commit('SET_SINGLE_PROJECT', { data: data, projectName: projectName })
                 })
         }

@@ -59,6 +59,30 @@
     }
 </style>
 
+
+<template>
+    <div id="NEO" class="neo">
+        <ul class="neo-lists page-container">
+            <preload :img-url-arr="sortedPapers" :order="true"></preload>
+            <li class="neo-item" v-for="item in sortedPapers" :ref="item.id">
+                <p class="neo-time">{{ item.time }} <span class="tag-bug" v-show="item.bug">BUG</span> </p>
+                <div class="paper card">
+                    <div class="card-img" @click="link(item.router)">
+                        <img :src="item.src" :data-src="item.src" :alt="item.id" :ref="item.id">
+                        <div class="card-intro" :style="item.style">
+                            <p class="card-title">{{ item.title }}</p>
+                            <p class="card-time">{{ item.time }}</p>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <p>{{ item.detail }}</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</template>
+
 <script>
     import { mapGetters } from 'vuex'
     import Preload from "../UI/preload";
@@ -177,25 +201,3 @@
 </script>
 
 
-<template>
-    <div id="NEO" class="neo">
-        <ul class="neo-lists page-container">
-            <preload :img-url-arr="imgUrls" :order="false"></preload>
-            <li class="neo-item" v-for="item in sortedPapers" :ref="item.id">
-                <p class="neo-time">{{ item.time }} <span class="tag-bug" v-show="item.bug">BUG</span> </p>
-                <div class="paper card">
-                    <div class="card-img" @click="link(item.router)">
-                        <img :src="item.src" :data-src="item.src" :alt="item.id" :ref="item.id">
-                        <div class="card-intro" :style="item.style">
-                            <p class="card-title">{{ item.title }}</p>
-                            <p class="card-time">{{ item.time }}</p>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <p>{{ item.detail }}</p>
-                    </div>
-                </div>
-            </li>
-        </ul>
-    </div>
-</template>
