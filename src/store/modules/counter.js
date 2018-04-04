@@ -257,7 +257,6 @@ const actions = {
         if ( fetchFlag ) {
             api.fetch(url)
                 .then((data) => {
-                    console.log(data)
                     context.commit('SET_SINGLE_PROJECT', { data: data, projectName: projectName })
                 })
         }
