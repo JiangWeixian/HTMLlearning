@@ -63,12 +63,13 @@
 <template>
     <div id="NEO" class="neo">
         <ul class="neo-lists page-container">
-            <!--<preload :img-url-arr="sortedPapers" :order="true"></preload>-->
+            <preload :img-url-arr="imgUrls" :order="true" @imgAllLoaded="view"></preload>
+            <inf-circle-loader color="blue" size="large"></inf-circle-loader>
             <li class="neo-item" v-for="item in sortedPapers" :ref="item.id">
                 <p class="neo-time">{{ item.time }} <span class="tag-bug" v-show="item.bug">BUG</span> </p>
                 <div class="paper card">
                     <div class="card-img" @click="link(item.router)">
-                        <img src="https://raw.githubusercontent.com/JiangWeixian/HTMLlearning/master/README/projects/onepaper/onepaper-city-info.png" :data-src="item.src" :alt="item.id" :ref="item.id">
+                        <img :src="defaultImg" :data-src="item.src" :alt="item.id" :ref="item.id">
                         <div class="card-intro" :style="item.style">
                             <p class="card-title">{{ item.title }}</p>
                             <p class="card-time">{{ item.time }}</p>
@@ -86,14 +87,18 @@
 <script>
     import { mapGetters } from 'vuex'
     import Preload from "../UI/preload";
+    import InfCircleLoader from "../UI/InfCircleLoader";
     export default {
-        components: {Preload},
+        components: {
+            InfCircleLoader,
+            Preload},
         name: "neo",
         data () {
             return {
                 name: 'neo',
                 itemIdx: 0,
                 itemCnt: 0,
+                defaultImg: 'https://raw.githubusercontent.com/JiangWeixian/HTMLlearning/dev/src/assets/img/default.png'
             }
         },
         watch: {
@@ -131,8 +136,8 @@
             link(url) {
                 this.$router.push({ path: url })
             },
-            imgAllLoaded(data) {
-                console.log(data)
+            _setCnt(cnt) {
+                this.itemCnt = cnt
             },
             onScrollHandler() {
                 let seeHeight = document.documentElement.clientHeight,
@@ -141,7 +146,7 @@
                     let domItem = this.$refs[id][1],
                         domItemImg = this.$refs[id][0];
                     if (domItem.offsetTop < seeHeight + scrollTop) {
-                        if (domItemImg.src === "https://raw.githubusercontent.com/JiangWeixian/HTMLlearning/master/README/projects/onepaper/onepaper-city-info.png") {
+                        if (domItemImg.src === this.defaultImg) {
                             domItemImg.src = domItemImg.getAttribute("data-src");
                         }
                     }
