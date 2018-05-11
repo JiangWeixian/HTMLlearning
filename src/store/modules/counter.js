@@ -40,7 +40,7 @@ const state = {
             content: 'Blog UI 设计规范'
         }
     },
-    articleLists: ['build_website'],
+    articleLists: ['build_website', 'js_tips'],
     articleThreads: {
         'build_website': {
             id: 'build_website',
@@ -51,6 +51,16 @@ const state = {
             time: '2018-03-05',
             content: 'Github个人博客 - Vue/图片池',
             title: 'Github建博客系列'
+        },
+        'js_tips': {
+            id: 'js_tips',
+            router: 'https://github.com/JiangWeixian/JS-Tips',
+            src: 'https://raw.githubusercontent.com/JiangWeixian/JS-Tips/master/img/js-tips.png',
+            alt: 'js_tips',
+            color: 'black',
+            time: '2018-05-10',
+            content: '使用JavaScript过程中一些HACKS技巧性总结。不仅仅包括JS，还有一些关于CSS等之类的技巧。',
+            title: 'JS-Tips'
         }
     }
 };
