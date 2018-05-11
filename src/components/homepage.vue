@@ -159,8 +159,8 @@
               </section>
               <section class="homepage-info paper">
                   <ul>
-                      <li class="title"><p>发布的文章 </p><span>{{ articleLens }}</span></li>
-                      <li class="title"><p>维护的项目 </p><span>{{ projectLens }}</span></li>
+                      <li class="title" @click="link('/la')"><p>发布的文章 </p><span>{{ articleLens }}</span></li>
+                      <li class="title" @click="link('/lp')"><p>维护的项目 </p><span>{{ projectLens }}</span></li>
                   </ul>
               </section>
               <section class="stack-info">
@@ -201,29 +201,12 @@
                       <router-link class="selected-name" tag="div" to="/la">
                           <span>文章</span>
                       </router-link>
-                      <!-- <a href="#" class="selected-name" v-bind:class="[selectedItem == 'projects' ? 'active' : '']" @click="select('projects')">项目</a> -->
-                      <!-- <a href="#" class="selected-name" v-bind:class="[selectedItem == 'articles' ? 'active' : '']" @click="select('articles')">文章</a> -->
                   </nav>
                   <div class="container">
                       <keep-alive>
                           <router-view></router-view>
                       </keep-alive>
-                  </div> 
-                  <!-- <ul class="container">
-                      
-                      <li class="paper card" v-for="item in items">
-                          <div class="card-img" @click="link(item.router)">
-                              <img :src="item.src" :alt="item.id">
-                              <div class="card-intro" :style="item.style">
-                                  <p class="card-title">{{ item.title }}</p>
-                                  <p class="card-time">{{ item.time }}</p>
-                              </div>
-                          </div>
-                          <div class="card-content">
-                              <p>{{ item.content }}</p>
-                          </div>
-                      </li>
-                  </ul> -->
+                  </div>
               </div>
           </div>
       </div>
@@ -235,15 +218,14 @@
     import { mapGetters } from 'vuex'
     import  Velocity from 'velocity-animate'
     import axios from "axios"
-    
+
     import drawer from './UI/drawer'
     import SiderNav from "./UI/siderNav";
     export default {
-        name: 'homepage', 
+        name: 'homepage',
         data () {
             return {
-                msg: 'Welcome to Your Vue.js App', 
-                selectedItem: 'articles'
+                msg: 'Welcome to Your Vue.js App'
             }
         },
         components: {
@@ -252,20 +234,14 @@
         },
         computed: {
             ...mapGetters({
-                articleLists: 'get_articlelists', 
-                projectLists: 'get_projectlists',
                 articleLens: 'get_articlelens',
                 projectLens: 'get_projectlens'
-            }),
-            items() {
-                let renderContent = this.selectedItem == 'projects'? this.projectLists: this.articleLists;
-                return renderContent
-            }
-        }, 
+            })
+        },
         methods: {
             select(type) {
                 this.selectedItem = type
-            }, 
+            },
             link(url) {
                 this.$router.push({ path: url })
             },
