@@ -1,4 +1,8 @@
 <style scoped>
+    .neo {
+        height: 100%;
+        overflow: auto;
+    }
     .neo-item {
         display: block;
         width: 40%;
@@ -61,15 +65,13 @@
 
 
 <template>
-    <div id="NEO" class="neo">
-        <ul class="neo-lists page-container">
-            <preload :img-url-arr="imgUrls" :order="true" @imgAllLoaded="view"></preload>
-            <inf-circle-loader color="blue" size="large"></inf-circle-loader>
-            <li class="neo-item" v-for="item in sortedPapers" :ref="item.id">
+    <div id="NEO" class="neo page-container" ref="neo">
+        <ul class="neo-lists">
+            <li class="neo-item" v-for="item in sortedPapers">
                 <p class="neo-time">{{ item.time }} <span class="tag-bug" v-show="item.bug">BUG</span> </p>
                 <div class="paper card">
                     <div class="card-img" @click="link(item.router)">
-                        <img :src="defaultImg" :data-src="item.src" :alt="item.id" :ref="item.id">
+                        <img :src="defaultImg" :data-src="item.src" :alt="item.id" ref="li">
                         <div class="card-intro" :style="item.style">
                             <p class="card-title">{{ item.title }}</p>
                             <p class="card-time">{{ item.time }}</p>
@@ -81,6 +83,12 @@
                 </div>
             </li>
         </ul>
+        <preload 
+          :img-url-arr="imgUrls" 
+          :order="true"
+          v-show="isLoading" 
+          @imgAllLoaded="_setCnt">
+        </preload>
     </div>
 </template>
 
@@ -97,7 +105,8 @@
             return {
                 name: 'neo',
                 itemIdx: 0,
-                itemCnt: 0,
+                itemCnt: 3,
+                limit: 3,
                 defaultImg: 'https://raw.githubusercontent.com/JiangWeixian/HTMLlearning/dev/src/assets/img/default.png'
             }
         },
@@ -110,10 +119,16 @@
             ...mapGetters({
                 searchContent: 'get_seachcontent'
             }),
-            sortedPapers() {
+            neos() {
                 let projectLists = this.$store.getters.get_single_project('onepaper');
-                let sortedNeoPapers = projectLists
-                    .slice()
+                return projectLists
+            },
+            totalCnt() {
+                return this.neos.length
+            },
+            sortedPapers() {
+                let sortedNeoPapers = this.neos
+                    .slice(0, this.itemCnt)
                     .sort((a, b) => {
                         var aTime = new Date(a.time),
                             bTime = new Date(b.time);
@@ -125,11 +140,14 @@
                 return this.sortedPapers.map((item) => {
                     return item.src
                 })
+            },
+            isLoading() {
+                return this.itemCnt <= this.totalCnt
             }
         },
         mounted() {
             this.$nextTick(function () {
-                document.documentElement.scrollTop = 10  
+                this.init()
             })
         },
         methods: {
@@ -137,24 +155,25 @@
                 this.$router.push({ path: url })
             },
             _setCnt(cnt) {
-                this.itemCnt = cnt
+                console.log(cnt)
+                if (this.itemCnt < this.totalCnt) {
+                    this.itemCnt += this.limit
+                }
             },
             onScrollHandler() {
-                let seeHeight = document.documentElement.clientHeight,
-                    scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-                Object.keys(this.$refs).slice(this.itemIdx, this.$refs.length).map((id, index) => {
-                    let domItem = this.$refs[id][1],
-                        domItemImg = this.$refs[id][0];
-                    if (domItem.offsetTop < seeHeight + scrollTop) {
-                        if (domItemImg.src === this.defaultImg) {
-                            domItemImg.src = domItemImg.getAttribute("data-src");
-                        }
+                let seeHeight = this.$refs.neo.offsetHeight,
+                    scrollTop = this.$refs.neo.scrollTop
+                this.$refs.li.map((item, index) => {
+                    let imgTop = item.offsetHeight * index
+                    if (imgTop < seeHeight + scrollTop) {
+                        if (item.src === this.defaultImg) {
+                            item.src = item.getAttribute("data-src")
+                        }   
                     }
-                    this.itemIdx = index
                 })
             },
             bindEvent() {
-                window.addEventListener('scroll', this.onScrollHandler, false)
+                this.$refs.neo.addEventListener('scroll', this.onScrollHandler, false)
             },
             init() {
                 this.bindEvent();
@@ -162,7 +181,6 @@
         },
         created() {
             this.$store.dispatch('set_single_project', { projectName: 'onepaper' })
-            this.init()
         }
     }
 </script>

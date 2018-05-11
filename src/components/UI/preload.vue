@@ -1,16 +1,20 @@
 <template>
     <div class="preload">
-        <p>{{ loadedCnt }}</p>
+        <inf-circle-loader color="blue" size="large"></inf-circle-loader>
     </div>
 </template>
 
 <script>
+    import InfCircleLoader from "./InfCircleLoader"
     export default {
         name: "preload",
         data() {
             return {
                 loadedCnt: 0
             }
+        },
+        components: {
+            InfCircleLoader
         },
         props: {
             imgUrlArr: {
@@ -55,6 +59,10 @@
                     this.orderPreload()
                 }
             }
+        },
+        created() {
+            this.init()
+            this.order ? this.orderPreload() : this.unorderedPreload()
         }
     }
 </script>

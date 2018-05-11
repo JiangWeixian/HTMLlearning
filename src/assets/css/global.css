@@ -26,6 +26,7 @@ i.lh-36 {
 
 .page-container {
     padding-top: 120px;
+    padding-bottom: 200px;
     min-height: calc(100vh - 200px);
     box-sizing: border-box;
 }
@@ -36,6 +37,7 @@ i.lh-36 {
 }
 .card .card-img {
     width: 100%;
+    display: block;
     overflow: hidden;
     position: relative;
     cursor: pointer;
@@ -89,7 +91,7 @@ i.lh-36 {
     font-weight: bold;
     font-size: 28px;
 }
-.selector a.selected-name {
+.selector .selected-name {
     color: #ccc;
     text-decoration: none;
     margin: 0 12px;
@@ -97,8 +99,9 @@ i.lh-36 {
     vertical-align: top;
     height: calc(75px - 3px);
 }
-.selector a.selected-name:hover,
-.selector a.active {
+.selector .selected-name:hover,
+.selector .selected-name.active,
+.selector .selected-name.router-link-active {
     color: #0c72ee;
     border-bottom: 3px solid #0c72ee;
 }

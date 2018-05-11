@@ -3,6 +3,8 @@ import Router from 'vue-router'
 import store from '../store'
 
 import Hello from '@/components/homepage'
+import ListArticles from "@/components/Homepage/ListArticles"
+import ListProjects from "@/components/Homepage/ListProjects"
 import notFound from '@/components/notFound'
 
 import test from '@/components/UI/uitest'
@@ -21,7 +23,24 @@ import article from '@/components/Files/article'
 Vue.use(Router);
 
 const routes = [
-    { path: '/', name: 'homepage', component: Hello },
+    { 
+        path: '/', 
+        name: 'homepage', 
+        component: Hello,
+        redirect: '/lp',
+        children: [
+            {
+                path: 'la',
+                name: 'ListArticles',
+                component: ListArticles
+            },
+            {
+                path: 'lp',
+                name: 'ListProjects',
+                component: ListProjects
+            }
+        ]
+    },
     { path: '/test', name: 'uitest', component: test },
     { path: '/articles/:id', name: 'article', component: article, props: true},
     { path: '/plugins/forthebadge', name: 'forthe-badge', component: fortheBadge},

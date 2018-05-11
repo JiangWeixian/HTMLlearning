@@ -4,6 +4,7 @@
         -moz-osx-font-smoothing: grayscale;
         text-align: center;
         color: #2c3e50;
+        height: 100%;
     }
     header {
         width: 100%;
@@ -42,9 +43,8 @@
         width: 100%;
         background-color: white;
         box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
-        position: relative;
+        position: absolute;
         left: 0;
-        top: 0;
         bottom: 0;
         z-index: 99;
     }

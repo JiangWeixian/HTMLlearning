@@ -1,6 +1,8 @@
 <style scoped>
     .home {
         background-color: #f5f5f5;
+        height: 100%;
+        overflow: auto;
     }
     ul {
         list-style: none;
@@ -8,7 +10,6 @@
     .home-main {
         width: 65%;
         margin: 0 auto;
-        height: 100%;
     }
     .sider-cover {
         background-color: rgba(0, 0, 0, 0.2);
@@ -194,10 +195,22 @@
           <div class="blog-content pull-right">
               <div class="mutiltype-lister">
                   <nav class="selector paper">
-                      <a href="#" class="selected-name" v-bind:class="[selectedItem == 'projects' ? 'active' : '']" @click="select('projects')">项目</a>
-                      <a href="#" class="selected-name" v-bind:class="[selectedItem == 'articles' ? 'active' : '']" @click="select('articles')">文章</a>
+                      <router-link class="selected-name" tag="div" to="/lp">
+                          <span>项目</span>
+                      </router-link>
+                      <router-link class="selected-name" tag="div" to="/la">
+                          <span>文章</span>
+                      </router-link>
+                      <!-- <a href="#" class="selected-name" v-bind:class="[selectedItem == 'projects' ? 'active' : '']" @click="select('projects')">项目</a> -->
+                      <!-- <a href="#" class="selected-name" v-bind:class="[selectedItem == 'articles' ? 'active' : '']" @click="select('articles')">文章</a> -->
                   </nav>
-                  <ul class="container">
+                  <div class="container">
+                      <keep-alive>
+                          <router-view></router-view>
+                      </keep-alive>
+                  </div> 
+                  <!-- <ul class="container">
+                      
                       <li class="paper card" v-for="item in items">
                           <div class="card-img" @click="link(item.router)">
                               <img :src="item.src" :alt="item.id">
@@ -210,7 +223,7 @@
                               <p>{{ item.content }}</p>
                           </div>
                       </li>
-                  </ul>
+                  </ul> -->
               </div>
           </div>
       </div>
@@ -221,6 +234,7 @@
 <script>
     import { mapGetters } from 'vuex'
     import  Velocity from 'velocity-animate'
+    import axios from "axios"
     
     import drawer from './UI/drawer'
     import SiderNav from "./UI/siderNav";
@@ -247,7 +261,7 @@
                 let renderContent = this.selectedItem == 'projects'? this.projectLists: this.articleLists;
                 return renderContent
             }
-            }, 
+        }, 
         methods: {
             select(type) {
                 this.selectedItem = type
