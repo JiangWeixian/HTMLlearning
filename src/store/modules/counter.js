@@ -44,7 +44,7 @@ const state = {
     articleThreads: {
         'build_website': {
             id: 'build_website',
-            router: 'https://github.com/JiangWeixian/HTMLlearning/blob/dev/README/articles/Github-%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%BB%BA%E7%AB%8B%E8%AF%B4%E6%98%8E/1-%E5%89%8D%E6%9C%9F%E5%87%86%E5%A4%87.md',
+            router: 'https://github.com/JiangWeixian/articles/blob/master/Github-%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%BB%BA%E7%AB%8B%E8%AF%B4%E6%98%8E/content.md',
             src: 'https://raw.githubusercontent.com/JiangWeixian/HTMLlearning/master/README/articles/Github-%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%BB%BA%E7%AB%8B%E8%AF%B4%E6%98%8E/img/build-website-1stpater-homepage.png',
             alt: 'build_website_1',
             color: 'black',
