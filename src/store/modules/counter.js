@@ -40,7 +40,7 @@ const state = {
             content: 'Blog UI 设计规范'
         }
     },
-    articleLists: ['build_website', 'js_tips'],
+    articleLists: ['build_website', 'js_tips', 'nznd'],
     articleThreads: {
         'build_website': {
             id: 'build_website',
@@ -61,6 +61,16 @@ const state = {
             time: '2018-05-10',
             content: '使用JavaScript过程中一些HACKS技巧性总结。不仅仅包括JS，还有一些关于CSS等之类的技巧。',
             title: 'JS-Tips'
+        },
+        'nznd': {
+            id: 'nznd',
+            router: "https://github.com/JiangWeixian/articles/blob/master/%E4%B8%8D%E4%BD%9C%E6%AD%BB%E5%B0%B1%E4%B8%8D%E4%BC%9A%E6%AD%BB/content.md",
+            src: 'https://raw.githubusercontent.com/JiangWeixian/articles/master/%E4%B8%8D%E4%BD%9C%E6%AD%BB%E5%B0%B1%E4%B8%8D%E4%BC%9A%E6%AD%BB/img/title.jpeg',
+            alt: 'nznd',
+            color: 'white',
+            time: '2018-05-13',
+            content: '尝试新事物，完全属于不作死就不会死的行为。',
+            title: 'NZND - 不作死就不会死'
         }
     }
 };
@@ -85,7 +95,7 @@ const actions = {
         let projectsLists = `${projectName}Lists`,
             projectThreads = `${projectName}Threads`,
             url = `${context.state.apiUrl}projects/${projectName}.json`;
-        let fetchFlag = api.isEmptyArr(context.state[projectsLists]) || api.isEmptyObject(context.state[projectThreads]); 
+        let fetchFlag = api.isEmptyArr(context.state[projectsLists]) || api.isEmptyObject(context.state[projectThreads]);
         if ( fetchFlag ) {
             api.fetch(url)
                 .then((data) => {
