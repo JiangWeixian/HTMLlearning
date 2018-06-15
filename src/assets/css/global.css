@@ -63,6 +63,10 @@ i.lh-36 {
     text-align: left;
 }
 
+.card .card-img .card-intro .card-title {
+    text-transform: uppercase;
+}
+
 .card .card-img .card-intro .card-time {
     font-family: 'Noto Sans', sans-serif;
     font-size: 24px;

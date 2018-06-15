@@ -43,7 +43,11 @@
         },
         methods: {
             link(url) {
-                this.$router.push({ path: url })
+                if (url === '/onepaper') {
+                    this.$router.push({ path: url })
+                } else {
+                    window.open(url)
+                }
             },
             preLoad (el) {
                 let img = new Image(),

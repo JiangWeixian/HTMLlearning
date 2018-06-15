@@ -7,7 +7,7 @@ const state = {
     searchContent: '',
     onepaperLists: [],
     onepaperThreads: {},
-    projectLists: ['onepaper', 'plugins', 'ui'],
+    projectLists: ['onepaper', 'simplemusic', 'gan'],
     projectThreads: {
         'onepaper': {
             id: 'onepaper',
@@ -16,31 +16,31 @@ const state = {
             alt: 'onepaper',
             color: 'white',
             title: 'ONEPAPER',
-            time: '2018-10-1',
+            time: '2017-10-1',
             content: '单页Vue页面，UI/动画/组件设计。属于练手项目'
         },
-        'plugins': {
-            id: 'plugins',
-            router: '/',
-            src: 'https://raw.githubusercontent.com/JiangWeixian/HTMLlearning/master/README/projects/projects-components.jpg',
-            alt: 'plugins',
-            color: 'white',
-            title: 'PLUGINS',
-            time: '2018-03-05',
-            content: '具有实际功能的可用插件'
+        'simplemusic': {
+            id: 'simplemusic',
+            router: 'https://github.com/JiangWeixian/simple-music/tree/dev',
+            src: 'https://raw.githubusercontent.com/JiangWeixian/HTMLlearning/master/README/projects/projects-simple-music.png',
+            alt: 'simplemusic',
+            color: 'red',
+            title: 'SIMPLEMUSIC',
+            time: '2018-05-05',
+            content: '仿写音乐WebApp'
         },
-        'ui': {
-            id: 'ui',
-            router: '/',
-            alt: 'ui',
+        'gan': {
+            id: 'gab',
+            router: 'https://github.com/JiangWeixian/pytorch-cifar',
+            alt: 'gan',
             color: 'white',
-            src: 'https://raw.githubusercontent.com/JiangWeixian/HTMLlearning/master/README/projects/projects-uirules.jpg',
-            title: 'UI',
-            time: '2018-10-1',
-            content: 'Blog UI 设计规范'
+            src: 'https://raw.githubusercontent.com/JiangWeixian/HTMLlearning/master/README/projects/project-gan.jpg',
+            title: 'gan',
+            time: '2018-04-05',
+            content: '生成对抗网络实现分类'
         }
     },
-    articleLists: ['build_website', 'js_tips', 'nznd'],
+    articleLists: ['build_website', 'js_tips', 'nznd', 'js_books'],
     articleThreads: {
         'build_website': {
             id: 'build_website',
@@ -71,6 +71,16 @@ const state = {
             time: '2018-05-13',
             content: '尝试新事物，完全属于不作死就不会死的行为。',
             title: 'NZND - 不作死就不会死'
+        },
+        'js_books': {
+            id: 'js_books',
+            router: "https://github.com/JiangWeixian/JS-Books",
+            src: 'https://raw.githubusercontent.com/JiangWeixian/JS-Books/master/README/Javascript-books.jpg',
+            alt: 'js_books',
+            color: 'white',
+            time: '2018-05-13',
+            content: '程序猿书籍和公开课阅读笔记。',
+            title: '永远保持饥渴'
         }
     }
 };
