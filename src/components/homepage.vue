@@ -69,6 +69,10 @@
         width: 68%;
     }
 
+    .mutiltype-lister .selector .selected-name {
+        cursor: pointer;
+    }
+
     @media screen and (min-width: 1024px) and (max-width: 1280px){
         .home-main {
             width: 70%;

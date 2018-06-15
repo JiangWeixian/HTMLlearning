@@ -37,6 +37,7 @@ i.lh-36 {
 }
 .card .card-img {
     width: 100%;
+    min-height: 400px;
     max-height: 800px;
     display: block;
     overflow: hidden;
