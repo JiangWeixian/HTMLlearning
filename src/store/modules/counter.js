@@ -22,9 +22,9 @@ const state = {
         'phoneclass': {
             id: 'phoneclass',
             router: 'https://github.com/JiangWeixian/tf-mobilenet-vue',
-            src: 'https://raw.githubusercontent.com/JiangWeixian/HTMLlearning/master/README/projects/projects-phone.jpg',
+            src: 'https://raw.githubusercontent.com/JiangWeixian/HTMLlearning/master/README/projects/project-phone.jpg',
             alt: 'phoneclass',
-            color: 'white',
+            color: 'black',
             title: 'Tensorflow+Vue实现图像分类',
             time: '2018-05-10',
             content: '结合Tensorflow+Vue实现对手机摄像头画面中图像进行分类，网络模型基于ImageNet训练得到。'
@@ -33,7 +33,7 @@ const state = {
             id: 'gab',
             router: 'https://github.com/JiangWeixian/pytorch-cifar',
             alt: 'gan',
-            color: 'white',
+            color: 'black',
             src: 'https://raw.githubusercontent.com/JiangWeixian/HTMLlearning/master/README/projects/project-gan.jpg',
             title: 'gan',
             time: '2018-04-05',
